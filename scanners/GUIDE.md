@@ -180,6 +180,7 @@ rules:
     pretty_name: 'G111: Potential directory traversal' # Display name of the rule
     description: <description>
     ref: <ref> # Reference URL of the rule
+  ...
 ```
 
 categories:
