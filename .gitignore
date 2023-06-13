@@ -1,0 +1,10 @@
+.DS_Store
+.vscode
+
+__pycache__/
+.pytest_cache
+*.py[cod]
+.coverage*
+dist/
+utils/stats/
+utils/stubs/

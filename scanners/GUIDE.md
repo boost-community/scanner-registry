@@ -3,6 +3,19 @@ Guide for the Boostsecurity Scanner Module creators that want to integrate secur
 
 ## Architecture Overview
 
+A scanner module includes two components:
+
+- A rules database
+- A module definition
+
+![module](schemas/registry_module.png)
+
+The rules database provides annotation and enrichment data for each rule id that can be raised by the scanner. The enrichment data includes amongst other things a list of labels each rules is associated with, which are used by security engineers when defining policies. 
+
+The module definition provides the configuration for the CLI to execute the scanner in the CI environment. Amongst other things, the module definition includes the configuration for the set up, the scanner execution and the post processing steps. The post processing is the converter, transforming the output of the scanner into the expected payload by the CLI.
+
+The architecture for the scanner components:
+
 ![architecture](schemas/scanner_architecture.png)
 
  1. The Boostsecurity CLI launches the scanner (as defined in module yaml).
@@ -168,12 +181,25 @@ rules:
     description: <description>
     ref: <ref> # Reference URL of the rule
 ```
+
+categories:
+  The list of labels the rule is associated with. Policies can be designed by making decisions based on labels. In that case, all rules with the same label are covered by the same policy.
+  Refer to Appendix A for list of categories.
+
+group:
+  Rules are grouped so that related findings are presented as part of the same group in the dashboard.
+  Refer to Appendix B for the list of supported groups.
+
+![findings](schemas/dashboard_findings.png)
+
+![policy](schemas/dashboard_policy.png)
+
 ### Leveraging rules from other rules namespace
 When defining the rules for a scanner module, it is sometimes desirable to reuse rules in some other modules. For example if the scanner module creates findings with the same rule id as for another exisitng scanner module, or a curated rules database.
 To reuse an existing rules database, import the rules files with the following syntax:
 ```yaml
 import:
-  - boostsecurityio/semgrep
+  - boostsecurityio/mitre-cwe
   - <other realm>/<curated rules>
 ```
 Multiple rules definition files can be imported. Note that the order of precedence is from bottom to top of the list. Which means if rules with the same rule id are defined in multiple of the imported rules file, the last loaded rule is the one that has precedence. That includes the rules defined locally. If a rule is defined locally has the same id as one of the rules imported, the rule defined locally has precedence. By leveraging the import mechanism it is thus possible to leveraging existing, curated rules definition, but redefine some rules to adapt to the scanner module specific behaviour.
@@ -702,4 +728,130 @@ steps:
         command: fs --format=cyclonedx --cache-dir=/tmp/trivy/ /app
         workdir: /app
      format: cyclonedx
+```
+
+
+## Appendix A - supported list of categories
+
+The list of categories defined and supported in Boostsecurity:
+```
+ALL
+boost-baseline
+boost-hardened
+cloud-insecure-iam
+cloud-resources-public-access
+cloud-unencrypted-resources
+cloud-weak-configuration
+cloud-weak-secrets-management
+cwe-1004
+cwe-1022
+cwe-1104
+cwe-116
+cwe-119
+cwe-1236
+cwe-125
+cwe-1254
+cwe-1275
+cwe-1327
+cwe-1333
+cwe-1336
+cwe-185
+cwe-20
+cwe-200
+cwe-22
+cwe-250
+cwe-259
+cwe-269
+cwe-276
+cwe-284
+cwe-285
+cwe-287
+cwe-295
+cwe-297
+cwe-306
+cwe-310
+cwe-311
+cwe-319
+cwe-320
+cwe-326
+cwe-327
+cwe-328
+cwe-338
+cwe-345
+cwe-346
+cwe-352
+cwe-369
+cwe-399
+cwe-400
+cwe-434
+cwe-470
+cwe-489
+cwe-494
+cwe-502
+cwe-522
+cwe-565
+cwe-601
+cwe-611
+cwe-614
+cwe-693
+cwe-703
+cwe-704
+cwe-706
+cwe-732
+cwe-74
+cwe-77
+cwe-777
+cwe-778
+cwe-78
+cwe-79
+cwe-798
+cwe-862
+cwe-89
+cwe-90
+cwe-913
+cwe-915
+cwe-918
+cwe-94
+cwe-943
+cwe-95
+cwe-96
+cwe-top-25
+insufficient-logging
+owasp-top-10
+stored-secrets
+supply-chain
+supply-chain-cicd-severe-issues
+supply-chain-cicd-vulnerable-pipeline
+supply-chain-cicd-weak-configuration
+supply-chain-missing-artifact-integrity-verification
+supply-chain-scm-weak-configuration
+vulnerable-and-outdated-components
+```
+
+## Appendix B - supported list of categories
+
+The list of groups defined and supported in Boostsecurity:
+```
+top10-broken-access-control
+top10-crypto-failures
+top10-injection
+top10-insecure-design
+top10-security-misconfiguration
+top10-vulnerable-components
+top10-id-authn-failures
+top10-software-data-integrity-failures
+top10-security-logging-monitoring-failures
+top10-server-side-request-forgery
+stored-secrets
+cloud-weak-configuration
+cloud-resources-public-access
+cloud-insecure-iam
+cloud-unencrypted-resources
+cloud-weak-secrets-management
+supply-chain-scm-weak-configuration
+supply-chain-cicd-vulnerable-pipeline
+supply-chain-cicd-weak-configuration
+supply-chain-missing-artifact-integrity-verification
+supply-chain-malicious-dependency
+supply-chain-unrestrained-use-of-3rd-party-services
 ```
