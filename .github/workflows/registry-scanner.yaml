@@ -4,13 +4,16 @@ on:
     branches:
       - main
 
-  pull_request:
+  pull_request_target:
     branches:
       - main
     types:
       - opened
       - synchronize
 
+permissions:
+  contents: read
+  
 jobs:
   scan_job:
     name: Scanner Registry Action
