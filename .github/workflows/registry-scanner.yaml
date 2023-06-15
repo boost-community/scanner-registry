@@ -4,7 +4,7 @@ on:
     branches:
       - main
 
-  pull_request_target:
+  pull_request:
     branches:
       - main
     types:
@@ -27,4 +27,3 @@ jobs:
         with:
           api_endpoint: ${{ vars.BOOST_API_ENDPOINT }}
           api_token: ${{ secrets.BOOST_SYSTEM_API_KEY_REGISTRY }}
-          docs_url: ${{ vars.BOOST_DOCS_URL }}
