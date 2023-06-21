@@ -1,0 +1,443 @@
+rules:
+  cicd-azure-devops-missing-authz-for-project:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-cicd-weak-configuration
+      - boost-baseline
+      - boost-hardened
+    description: Ensure Azure DevOps projects limit autorization scope of Azure Pipelines.
+    group: supply-chain-cicd-weak-configuration
+    name: cicd-azure-devops-missing-authz-for-project
+    pretty_name: CI/CD - Azure DevOps Project Limit Pipelines Authorization Scope
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-azure-devops-missing-authz-for-project.html'
+  cicd-azure-devops-variables-settable-at-queue-time:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-cicd-vulnerable-pipeline
+      - boost-baseline
+      - boost-hardened
+    description: Ensure Azure Pipelines limit variables that can be set a queue time.
+    group: supply-chain-cicd-vulnerable-pipeline
+    name: cicd-azure-devops-variables-settable-at-queue-time
+    pretty_name: CI/CD - Limit Azure Pipelines Variables
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-azure-devops-variables-settable-at-queue-time.html'
+  cicd-azure-devops-using-user-managed-agent-pools:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-cicd-weak-configuration
+      - boost-baseline
+      - boost-hardened
+    description: Ensure pipelines run using Microsoft-hosted agents
+    group: supply-chain-cicd-weak-configuration
+    name: cicd-azure-devops-using-user-managed-agent-pools
+    pretty_name: CI/CD - Azure Pipeline Self-Hosted Agent Pools
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-azure-devops-using-user-managed-agent-pools.html'
+  cicd-branch-protection-absent:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+      - supply-chain-cicd-severe-issues
+      - boost-baseline
+      - boost-hardened
+    description: Checks for repositories that do not have any Branch Protection configured.
+    group: supply-chain-scm-weak-configuration
+    name: cicd-branch-protection-absent
+    pretty_name: CI/CD - Missing Repository Branch Protection
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-branch-protection.html'
+  cicd-branch-protection-allows-deletion:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+      - supply-chain-cicd-severe-issues
+      - boost-baseline
+      - boost-hardened
+    description: Checks for Branch Protection config that allow deletion of the branch
+      from Git.
+    group: supply-chain-scm-weak-configuration
+    name: cicd-branch-protection-allows-deletion
+    pretty_name: CI/CD - Branch Protection - Allows deletions of branch
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-branch-protection.html'
+  cicd-branch-protection-allows-force-pushes:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+      - supply-chain-cicd-severe-issues
+      - boost-baseline
+      - boost-hardened
+    description: Checks for Branch Protection config that allow force pushes.
+    group: supply-chain-scm-weak-configuration
+    name: cicd-branch-protection-allows-force-pushes
+    pretty_name: CI/CD - Branch Protection - Allows force pushes
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-branch-protection.html'
+  cicd-branch-protection-allows-non-linear-history:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+    description: Checks for Branch Protection config that allows non linear history
+      (merge commits) to be pushed.
+    group: supply-chain-scm-weak-configuration
+    name: cicd-branch-protection-allows-non-linear-history
+    pretty_name: CI/CD - Branch Protection - Allows non linear history
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-branch-protection.html'
+  cicd-branch-protection-allows-unresolved-conversations:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+    description: Checks for Branch Protection config that does not require all converations
+      to be resolved before merging.
+    group: supply-chain-scm-weak-configuration
+    name: cicd-branch-protection-allows-unresolved-conversations
+    pretty_name: CI/CD - Branch Protection - Allows unresolved conversations
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-branch-protection.html'
+  cicd-branch-protection-no-code-owners-review-required:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+      - boost-baseline
+      - boost-hardened
+    description: Checks for Branch Protection config that require no review from a designated
+      code owner.
+    group: supply-chain-scm-weak-configuration
+    name: cicd-branch-protection-no-code-owners-review-required
+    pretty_name: CI/CD - Branch Protection - No review required from Code Owners
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-branch-protection.html'
+  cicd-branch-protection-no-commit-signature-required:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+      - boost-baseline
+      - boost-hardened
+    description: Checks for Branch Protection config that does not require commits to
+      be cryptographically signed.
+    group: supply-chain-scm-weak-configuration
+    name: cicd-branch-protection-no-commit-signature-required
+    pretty_name: CI/CD - Branch Protection - No signed commits required
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-branch-protection.html'
+  cicd-branch-protection-not-enforced-for-admins:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+      - supply-chain-cicd-severe-issues
+      - boost-baseline
+      - boost-hardened
+    description: Checks for Branch Protection config that are not enforced for admin
+      roles.
+    group: supply-chain-scm-weak-configuration
+    name: cicd-branch-protection-not-enforced-for-admins
+    pretty_name: CI/CD - Branch Protection - Not enforced for admin roles
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-branch-protection.html'
+  cicd-branch-protection-stale-reviews-remain-valid:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+      - boost-baseline
+      - boost-hardened
+    description: Checks for Branch Protection config that keep review approvals even
+      after new commits are pushed in the Pull Request.
+    group: supply-chain-scm-weak-configuration
+    name: cicd-branch-protection-stale-reviews-remain-valid
+    pretty_name: CI/CD - Branch Protection - Stale review approvals remain valid
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-branch-protection.html'
+  cicd-branch-protection-zero-approval-required:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+      - boost-baseline
+      - boost-hardened
+    description: Checks for Branch Protection config that require no (zero) approving
+      review.
+    group: supply-chain-scm-weak-configuration
+    name: cicd-branch-protection-zero-approval-required
+    pretty_name: CI/CD - Branch Protection - No (zero) approving review required
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-branch-protection.html'
+  cicd-branch-protection-zero-status-check-required:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+      - boost-baseline
+      - boost-hardened
+    description: Checks for Branch Protection config that require no (zero) status check
+      to pass.
+    group: supply-chain-scm-weak-configuration
+    name: cicd-branch-protection-zero-status-check-required
+    pretty_name: CI/CD - Branch Protection - No (zero) status check required
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-branch-protection.html'
+  cicd-branch-protection-allows-self-reviewed-code:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+      - boost-baseline
+      - boost-hardened
+    description: Checks for Branch Protection config that allows a Pull Request reviewer
+      to push new commits that bypass otherwise enforced peer review approval.
+    group: supply-chain-scm-weak-configuration
+    name: cicd-branch-protection-allows-self-reviewed-code
+    pretty_name: CI/CD - Branch Protection - Allows reviewer to self-review their own
+      changes
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-branch-protection.html'
+  cicd-gha-can-create-and-approve-pull-requests:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-cicd-weak-configuration
+      - supply-chain-cicd-severe-issues
+      - boost-baseline
+      - boost-hardened
+    description: Checks for GitHub organizations that allow GitHub Actions to create
+      and approve pull requests.
+    group: supply-chain-cicd-weak-configuration
+    name: cicd-gha-can-create-and-approve-pull-requests
+    pretty_name: CI/CD - GitHub Actions can approve pull requests
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-gha-can-create-and-approve-pull-requests.html'
+  cicd-gha-org-secret-publicly-visible:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-cicd-weak-configuration
+      - boost-baseline
+      - boost-hardened
+    description: Checks for GitHub organizations which have Organization-level secrets
+      that can be accessed by workflows from public repositories.
+    group: supply-chain-cicd-weak-configuration
+    name: cicd-gha-org-secret-publicly-visible
+    pretty_name: CI/CD - GitHub Organization Secret visible from public repositories
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-gha-org-secret-publicly-visible.html'
+  cicd-gha-org-allows-all-actions:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-cicd-weak-configuration
+      - boost-baseline
+      - boost-hardened
+    description: Checks for GitHub organizations that allow all GitHub Actions to run
+      without any restriction.
+    group: supply-chain-cicd-weak-configuration
+    name: cicd-gha-org-allows-all-actions
+    pretty_name: CI/CD - All GitHub Actions are allowed to run
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-gha-org-allows-all-actions.html'
+  cicd-gha-read-write-token-permissions:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-cicd-weak-configuration
+      - boost-baseline
+      - boost-hardened
+    description: Checks for GitHub organizations that grant GitHub Actions Read / Write
+      permissions to the GitHub API.
+    group: supply-chain-cicd-weak-configuration
+    name: cicd-gha-read-write-token-permissions
+    pretty_name: CI/CD - GitHub Actions have Read / Write permissions
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-gha-read-write-token-permission.html'
+  cicd-sca-scanning-absent:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+      - boost-baseline
+      - boost-hardened
+    description: Checks for SCM repositories that do not have SCA (Software Composition
+      Analysis) scanning enabled.
+    group: supply-chain-cicd-weak-configuration
+    name: cicd-sca-scanning-absent
+    pretty_name: CI/CD - Missing Software Composition Analysis (SCA) Scanning
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-sca-scanning-absent.html'
+  cicd-scm-2fa-enforcement-absent:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+      - supply-chain-cicd-severe-issues
+      - boost-baseline
+      - boost-hardened
+    description: Checks for SCMs that are not enforcing all members to have 2FA enabled.
+    group: supply-chain-scm-weak-configuration
+    name: cicd-scm-2fa-enforcement-absent
+    pretty_name: CI/CD - Missing SCM 2FA Enforcement
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-scm-2fa-enforcement-absent.html'
+  cicd-scm-gh-app-with-elevated-permissions:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+      - boost-hardened
+    description: Checks for GitHub organizations with third-party applications that
+      have elevated permissions.
+    group: supply-chain-scm-weak-configuration
+    name: cicd-scm-gh-app-with-elevated-permissions
+    pretty_name: CI/CD - Elevated GitHub App Permissions
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-scm-gh-app-with-elevated-permissions.html'
+  cicd-scm-gh-org-has-outside-collaborators:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+      - boost-hardened
+    description: Checks for GitHub organizations with outside collaborators.
+    group: supply-chain-scm-weak-configuration
+    name: cicd-scm-gh-org-has-outside-collaborators
+    pretty_name: CI/CD - GitHub Organization has Outside Collaborators
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-scm-gh-org-has-outside-collaborators.html'
+  cicd-scm-gh-org-high-default-member-permissions:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+      - supply-chain-cicd-severe-issues
+      - boost-baseline
+      - boost-hardened
+    description: Checks for GitHub organizations with privileged default member permissions.
+    group: supply-chain-scm-weak-configuration
+    name: cicd-scm-gh-org-high-default-member-permissions
+    pretty_name: CI/CD - Privileged Default Member Permissions
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-scm-gh-org-high-default-member-permissions.html'
+  cicd-scm-gh-org-insecure-webhook:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+      - supply-chain-cicd-severe-issues
+      - boost-baseline
+      - boost-hardened
+    description: Checks for GitHub organizations with insecure webhooks.
+    group: supply-chain-scm-weak-configuration
+    name: cicd-scm-gh-org-insecure-webhook
+    pretty_name: CI/CD - Insecure GitHub Webhooks
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-scm-gh-org-insecure-webhook.html'
+  cicd-scm-gh-org-number-of-owners:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+      - boost-hardened
+    description: Checks for the number of GitHub Organization owners
+    group: supply-chain-scm-weak-configuration
+    name: cicd-scm-gh-org-number-of-owners
+    pretty_name: CI/CD - Invalid Number of GitHub Organization Owners
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-scm-gh-org-number-of-owners.html'
+  cicd-scm-gh-repo-number-of-admins:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+      - boost-hardened
+    description: Checks for the number of GitHub Repository contributors with administrative
+      privileges.
+    group: supply-chain-scm-weak-configuration
+    name: cicd-scm-gh-repo-number-of-admins
+    pretty_name: CI/CD - Invalid Number of GitHub Repository Admins
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-scm-gh-repo-number-of-admins.html'
+  cicd-scm-gh-repo-outside-collaborator-admin-maintainer:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+      - boost-hardened
+    description: Checks for GitHub repositories with privileged outside collaborators.
+    group: supply-chain-scm-weak-configuration
+    name: cicd-scm-gh-repo-outside-collaborator-admin-maintainer
+    pretty_name: CI/CD - GitHub Repository with Privileged Outside Collaborators
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-scm-gh-repo-outside-collaborator-admin-maintainer.html'
+  cicd-scm-gh-audit-log-oauth-app-restriction-disabled:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+      - supply-chain-cicd-severe-issues
+      - boost-baseline
+      - boost-hardened
+    description: Checks for GitHub organizations where an Audit Log event indicates
+      that OAuth App restrictions were disabled.
+    group: supply-chain-scm-weak-configuration
+    name: cicd-scm-gh-audit-log-oauth-app-restriction-disabled
+    pretty_name: CI/CD - Audit Log - OAuth App Restriction Disabled
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-scm-gh-audit-log-oauth-app-restriction-disabled.html'
+  cicd-scm-gh-audit-log-branch-protection-overriden:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+      - supply-chain-cicd-severe-issues
+      - boost-baseline
+      - boost-hardened
+    description: Checks for GitHub repositories where an Audit Log event indicates that
+      Branch Protection was overridden using administrator's privilege.
+    group: supply-chain-scm-weak-configuration
+    name: cicd-scm-gh-audit-log-branch-protection-overriden
+    pretty_name: CI/CD - Audit Log - Branch Protection Overridden by Admin
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-scm-gh-audit-log-branch-protection-overriden.html'
+  cicd-scm-gl-on-push-secret-detection:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+      - boost-baseline
+      - boost-hardened
+    description: Checks for GitLab projects that do not have the push rule for secret
+      file detection enabled.
+    group: supply-chain-scm-weak-configuration
+    name: cicd-scm-gl-on-push-secret-detection
+    pretty_name: CI/CD - GitLab On Push Secret File Detection Missing
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-scm-gl-on-push-secret-detection.html'
+  cicd-scm-private-forks:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - boost-hardened
+    description: Checks for SCM configuration that allow contributors to fork private
+      repositories.
+    group: supply-chain-scm-weak-configuration
+    name: cicd-scm-private-forks
+    pretty_name: CI/CD - SCM Private Forks
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-scm-private-forks.html'
+  cicd-gl-deployment-approval:
+    categories:
+      - ALL
+      - supply-chain
+      - supply-chain-scm-weak-configuration
+      - supply-chain-cicd-weak-configuration
+      - boost-hardened
+    description: GitLab Environment does not require approvals for deployments.
+    group: supply-chain-cicd-weak-configuration
+    name: cicd-gl-deployment-approval
+    pretty_name: CI/CD - GitLab Environment no approvals required for deployments
+    ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-gl-deployment-approval.html'
