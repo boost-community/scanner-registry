@@ -4,6 +4,8 @@ api_version: 1.0
 id: boostsecurityio/safety
 name: BoostSecurity Safety
 namespace: boostsecurityio/safety
+scan_types:
+  - sca
 
 
 config:

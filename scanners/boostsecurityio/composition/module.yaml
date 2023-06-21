@@ -3,6 +3,8 @@ api_version: 1.0
 id: boostsecurityio/composition
 name: BoostSecurity Composition Scanner
 namespace: boostsecurityio/composition
+scan_types:
+  - metadata
 
 config:
   support_diff_scan: false

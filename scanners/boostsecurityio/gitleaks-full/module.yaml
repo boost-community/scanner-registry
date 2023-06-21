@@ -3,6 +3,8 @@ api_version: 1.0
 id: boostsecurityio/gitleaks-full
 name: BoostSecurity Gitleaks Git Scan
 namespace: boostsecurityio/gitleaks-full
+scan_types:
+  - sast
 
 config:
   support_diff_scan: false

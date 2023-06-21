@@ -3,6 +3,8 @@ api_version: 1.0
 id: boostsecurityio/codeql
 name: BoostSecurity CodeQL
 namespace: boostsecurityio/codeql
+scan_types:
+  - sast
 
 config:
   support_diff_scan: true

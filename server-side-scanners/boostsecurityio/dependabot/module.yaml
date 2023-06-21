@@ -1,3 +1,4 @@
-
 name: Dependabot
 namespace: boostsecurityio/dependabot
+scan_types:
+  - sca

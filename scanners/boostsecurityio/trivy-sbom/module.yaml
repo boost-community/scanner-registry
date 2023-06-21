@@ -3,6 +3,8 @@ api_version: 1.0
 id: boostsecurityio/trivy-sbom
 name: BoostSecurity Trivy (FS SBOM)
 namespace: boostsecurityio/trivy-sbom
+scan_types:
+  - sbom
 
 config:
   support_diff_scan: false

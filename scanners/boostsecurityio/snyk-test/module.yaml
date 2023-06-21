@@ -4,6 +4,8 @@ api_version: 1.0
 id: boostsecurityio/snyk-test
 name: BoostSecurity Snyk SCA
 namespace: boostsecurityio/snyk-test
+scan_types:
+  - sca
 
 
 config:

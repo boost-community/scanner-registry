@@ -3,6 +3,8 @@ api_version: 1.0
 id: boostsecurityio/trivy-sbom-image
 name: BoostSecurity Trivy (Image SBOM)
 namespace: boostsecurityio/trivy-sbom-image
+scan_types:
+  - sbom
 
 config:
   support_diff_scan: false

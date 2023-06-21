@@ -4,6 +4,8 @@ api_version: 1.0
 id: boostsecurityio/osv-scanner
 name: BoostSecurity osv-scanner
 namespace: boostsecurityio/osv-scanner
+scan_types:
+  - sca
 
 
 config:

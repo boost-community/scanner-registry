@@ -4,7 +4,8 @@ api_version: 1.0
 id: boostsecurityio/npm-audit
 name: BoostSecurity npm-audit
 namespace: boostsecurityio/npm-audit
-
+scan_types:
+  - sca
 
 config:
   support_diff_scan: true

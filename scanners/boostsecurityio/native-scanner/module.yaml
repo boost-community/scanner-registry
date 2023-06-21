@@ -4,6 +4,9 @@ api_version: 1.0
 id: scanner
 name: BoostSecurity Native Scanner
 namespace: default
+scan_types:
+  - sast
+  - cicd
 
 
 config:

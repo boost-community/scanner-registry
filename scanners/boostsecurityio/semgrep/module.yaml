@@ -3,6 +3,8 @@ api_version: 1.0
 id: boostsecurityio/semgrep
 name: BoostSecurity semgrep
 namespace: boostsecurityio/semgrep
+scan_types:
+  - sast
 
 config:
   support_diff_scan: true

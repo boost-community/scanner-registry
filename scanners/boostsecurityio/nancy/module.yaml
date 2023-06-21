@@ -4,6 +4,8 @@ api_version: 1.0
 id: boostsecurityio/nancy
 name: BoostSecurity nancy
 namespace: boostsecurityio/nancy
+scan_types:
+  - sca
 
 
 config:

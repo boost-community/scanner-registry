@@ -3,6 +3,8 @@ api_version: 1.0
 id: opensecurity/mobsfscan
 name: OpenSecurity mobsfscan
 namespace: opensecurity/mobsfscan
+scan_types:
+  - sast
 
 config:
   support_diff_scan: true

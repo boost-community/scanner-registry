@@ -3,6 +3,8 @@ api_version: 1.0
 id: boostsecurityio/brakeman
 name: BoostSecurity Brakeman
 namespace: boostsecurityio/brakeman
+scan_types:
+  - sast
 
 config:
   support_diff_scan: true
