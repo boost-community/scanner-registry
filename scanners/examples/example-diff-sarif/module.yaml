@@ -4,6 +4,8 @@ api_version: 1.0
 id: example-diff-sarif             # unique name
 name: Example Sarif Scanner        # descriptive name
 namespace: example-diff-sarif      # rule namespace
+scan_types:                        # scan types: sast, sca, metadata, ...
+  - sast
 
 
 config:

@@ -4,6 +4,8 @@ api_version: 1.0
 id: example-main-sarif            # unique name
 name: Example Sarif Scanner       # descriptive name
 namespace: example-main-sarif     # rule namespace
+scan_types:                        # scan types: sast, sca, metadata, ...
+  - sast
 
 
 config:
