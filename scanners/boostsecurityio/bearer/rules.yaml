@@ -1,0 +1,14 @@
+rules:
+  javascript_lang_eval_user_input:
+    categories:
+    - cwe-94
+    - cwe-95
+    - owasp-top-10
+    - cwe-top-25
+    group: top10-injection
+    name: javascript_lang_eval_user_input
+    pretty_name: javascript_lang_eval_user_input
+    ref: https://cwe.mitre.org/data/definitions/95.html
+    description: Dangerous use of eval with user input detected
+
+
