@@ -3,6 +3,8 @@ api_version: 1.0
 id: boostsecurityio/bearer
 name: BoostSecurity Bearer
 namespace: boostsecurityio/bearer
+scan_types:
+  - sast
 
 setup:
 - name: Download Bearer module
