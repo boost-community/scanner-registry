@@ -41,6 +41,9 @@ setup:
     
     chmod +x bearer
 
+config:
+  support_diff_scan: true
+
 steps:
 - scan:
     command:
