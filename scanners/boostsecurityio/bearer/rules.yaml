@@ -1,6 +1,7 @@
 rules:
   javascript_lang_eval_user_input:
     categories:
+    - ALL
     - cwe-94
     - cwe-95
     - owasp-top-10
