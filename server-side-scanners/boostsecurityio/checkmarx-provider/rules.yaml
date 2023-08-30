@@ -40082,7 +40082,7 @@ rules:
     ref: https://checkmarx.com/resource/documents/en/34965-67042-checkmarx-one.html
   Ruby_Vulnerable_Outdated_Versions_Outdated_JSON_GEM_Remote_Code:
     categories:
-    - top10-vulnerable-components
+    - vulnerable-and-outdated-components
     - owasp-top-10
     - cwe-20
     - boost-baseline
@@ -40098,7 +40098,7 @@ rules:
   Ruby_Vulnerable_Outdated_Versions_Outdated_JSON_Remote_Code_Execution:
     categories:
     - cwe-94
-    - top10-vulnerable-components
+    - vulnerable-and-outdated-components
     - owasp-top-10
     - boost-baseline
     - ALL
@@ -40114,7 +40114,7 @@ rules:
   Ruby_Vulnerable_Outdated_Versions_Outdated_Rails_Allows_Bypass_Access_Control:
     categories:
     - cwe-477
-    - top10-vulnerable-components
+    - vulnerable-and-outdated-components
     - owasp-top-10
     - boost-baseline
     - ALL
@@ -40127,7 +40127,7 @@ rules:
   Ruby_Vulnerable_Outdated_Versions_Outdated_Rails_Allows_Cross_Site_Request_Forgery:
     categories:
     - cwe-352
-    - top10-vulnerable-components
+    - vulnerable-and-outdated-components
     - owasp-top-10
     - boost-baseline
     - ALL
@@ -40141,7 +40141,7 @@ rules:
     ref: https://checkmarx.com/resource/documents/en/34965-67042-checkmarx-one.html
   Ruby_Vulnerable_Outdated_Versions_Outdated_Rails_Allows_DOS_via_ActiveRecord:
     categories:
-    - top10-vulnerable-components
+    - vulnerable-and-outdated-components
     - owasp-top-10
     - cwe-400
     - boost-baseline
@@ -40156,7 +40156,7 @@ rules:
     ref: https://checkmarx.com/resource/documents/en/34965-67042-checkmarx-one.html
   Ruby_Vulnerable_Outdated_Versions_Outdated_Rails_Allows_SQL_Injection:
     categories:
-    - top10-vulnerable-components
+    - vulnerable-and-outdated-components
     - cwe-89
     - owasp-top-10
     - boost-baseline
@@ -40172,7 +40172,7 @@ rules:
     ref: https://checkmarx.com/resource/documents/en/34965-67042-checkmarx-one.html
   Ruby_Vulnerable_Outdated_Versions_Outdated_Rails_Allows_XSS:
     categories:
-    - top10-vulnerable-components
+    - vulnerable-and-outdated-components
     - cwe-79
     - owasp-top-10
     - boost-baseline
