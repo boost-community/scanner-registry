@@ -19,13 +19,17 @@ setup:
         echo "Error: SEMGREP_APP_TOKEN environment variable is not set."
         exit 1
       fi
+      semgrep login
+  - name: Install Semgrep Pro engine
+    run: |
+      semgrep install-semgrep-pro
 
 steps:
   - scan:
       command:
         docker:
           image: returntocorp/semgrep:1.39.0@sha256:fd3d6ccd390677db83880d99a9f494500c003ec82177cc141f6ec37f71633a96
-          command: semgrep scan --sarif --quiet --disable-version-check
+          command: semgrep scan --pro --sarif --quiet --disable-version-check
           workdir: /src
           environment:
             XDG_CONFIG_HOME: /tmp
