@@ -1,15 +1,24 @@
 api_version: 1.0
 
-id: boostsecurityio/semgrep
-name: BoostSecurity semgrep
-namespace: boostsecurityio/semgrep
+id: boostsecurityio/semgrep-pro
+name: BoostSecurity semgrep Pro
+namespace: boostsecurityio/semgrep-pro
 scan_types:
   - sast
 
 config:
   support_diff_scan: true
+  require_full_repo: true
   include_files:
   - .semgrep/*
+
+setup:
+  - name: Validate Semgrep API Key
+    run: |
+      if [ -z "$SEMGREP_APP_TOKEN" ]; then
+        echo "Error: SEMGREP_APP_TOKEN environment variable is not set."
+        exit 1
+      fi
 
 steps:
   - scan:
