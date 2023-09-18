@@ -450,7 +450,7 @@ rules:
     description: Checks that creation of repositories is restricted in the SCM organization.
     group: supply-chain-scm-weak-configuration
     name: cicd-scm-limit-repo-creation
-    pretty_name: CI/CD - SCM Repository Creation Restricted
+    pretty_name: CI/CD - SCM Repository Creation Not Restricted
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-scm-repo-creation-restricted.html'
   cicd-scm-org-verified:
     categories:
@@ -461,7 +461,7 @@ rules:
     description: Checks the SCM organization has been verified.
     group: supply-chain-scm-weak-configuration
     name: cicd-scm-org-verified
-    pretty_name: CI/CD - SCM Organization Verified
+    pretty_name: CI/CD - SCM Organization Not Verified
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-scm-org-verified.html'
   cicd-gl-deployment-approval:
     categories:
