@@ -1,10 +1,14 @@
 api_version: 1.0
 
-id: boostsecurityio/bearer
-name: BoostSecurity Bearer
-namespace: boostsecurityio/bearer
+id: boostsecurityio/bearer-pii
+name: BoostSecurity Bearer (PII)
+namespace: boostsecurityio/bearer-pii
 scan_types:
-  - sast
+  - metadata
+
+config:
+  support_diff_scan: false
+  require_full_repo: true
 
 setup:
 - name: Download Bearer module
@@ -42,17 +46,13 @@ setup:
     rm bearer.tar.gz
     
     chmod +x bearer
-
-config:
-  support_diff_scan: true
-
 steps:
 - scan:
     command:
       run: |
-        $SETUP_PATH/bearer scan --format json .
-    format: sarif
+        $SETUP_PATH/bearer scan --format json --report=privacy .
+    format: metadata
     post-processor:
       docker:
         image: public.ecr.aws/boostsecurityio/boost-scanner-bearer:fc69f64@sha256:bc2df1892c6fc13afc81e66c75e86a36835dd6b85282cdb9dabc12bbeca0f05a
-        command: sast -
+        command: privacy -
