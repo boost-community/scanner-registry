@@ -1,0 +1,11 @@
+rules:
+  forbidden-license:
+    categories:
+      - ALL
+      - boost-baseline
+      - use-of-forbidden-license
+    description: Package with Unauthorized License
+    name: forbidden-license
+    group: license-violations
+    pretty_name: Package with Unauthorized License
+    ref: https://docs.boostsecurity.io/rules/index.html
