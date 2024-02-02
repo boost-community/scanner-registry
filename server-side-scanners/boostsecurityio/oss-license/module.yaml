@@ -1,2 +1,4 @@
 name: BoostSecurity OSS License
 namespace: boostsecurityio/oss-license
+scan_type:
+  - sca

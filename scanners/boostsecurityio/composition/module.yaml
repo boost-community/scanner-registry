@@ -5,6 +5,7 @@ name: BoostSecurity Composition Scanner
 namespace: boostsecurityio/composition
 scan_types:
   - metadata
+  - sci
 
 config:
   support_diff_scan: false

@@ -1,2 +1,4 @@
 name: BoostSecurity CI/CD
 namespace: boostsecurityio/cicd
+scan_type:
+  - cicd
