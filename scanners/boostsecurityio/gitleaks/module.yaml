@@ -4,7 +4,7 @@ id: boostsecurityio/gitleaks
 name: BoostSecurity Gitleaks
 namespace: boostsecurityio/gitleaks
 scan_types:
-  - sast
+  - secrets
 
 config:
   support_diff_scan: true

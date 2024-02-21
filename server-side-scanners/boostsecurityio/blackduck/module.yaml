@@ -1,2 +1,4 @@
 name: BoostSecurity BlackDuck
 namespace: boostsecurityio/blackduck
+scan_types:
+  - sca
