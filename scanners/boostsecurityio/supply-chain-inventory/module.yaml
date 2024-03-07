@@ -1,0 +1,23 @@
+api_version: 1.0
+
+id: boostsecurityio/supply-chain-inventory
+name: BoostSecurity Supply Chain Inventory
+namespace: boostsecurityio/supply-chain-inventory
+scan_types:
+  - metadata
+  - sci
+
+config:
+  support_diff_scan: false
+  require_full_repo: true
+
+steps:
+  - scan:
+      format: supply_chain_inventory
+      command:
+        docker:
+          image: public.ecr.aws/boostsecurityio/boost-scanner-composition:f9c5372@sha256:30b885b536fa0382b51c15ba4f1d8307bf997d7d6ef1a151ad4b4ca9
+          command: inventory
+          workdir: /src
+          environment:
+            XDG_CONFIG_HOME: /tmp
