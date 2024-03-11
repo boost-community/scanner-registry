@@ -11,6 +11,17 @@ config:
   require_full_repo: true
 
 setup:
+  - name: Config
+    environment:
+      CODEQL_LANGUAGE: ${CODEQL_LANGUAGE}
+      CODEQL_CREATE_ARGS: ${CODEQL_CREATE_ARGS:-}
+      CODEQL_QUERY: ${CODEQL_QUERY:-}
+      CODEQL_ANALYZE_ARGS: ${CODEQL_ANALYZE_ARGS:-}
+    run: |
+      echo "CODEQL_LANGUAGE: '$CODEQL_LANGUAGE'"
+      echo "CODEQL_CREATE_ARGS: '$CODEQL_CREATE_ARGS'"
+      echo "CODEQL_QUERY: '$CODEQL_QUERY'"
+      echo "CODEQL_ANALYZE_ARGS: '$CODEQL_ANALYZE_ARGS'"
   - name: Download CodeQL bundle
     run: |
       case "$CODEQL_LANGUAGE" in

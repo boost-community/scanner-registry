@@ -13,6 +13,11 @@ config:
   - .semgrep/*
 
 setup:
+  - name: Config
+    environment:
+      SEMGREP_RULES: ${SEMGREP_RULES:-auto}
+    run: |
+      echo "SEMGREP_RULES: '$SEMGREP_RULES'"
   - name: Validate Semgrep API Key
     run: |
       if [ -z "$SEMGREP_APP_TOKEN" ]; then

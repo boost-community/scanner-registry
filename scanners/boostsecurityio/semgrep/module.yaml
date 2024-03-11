@@ -11,6 +11,13 @@ config:
   include_files:
   - .semgrep/*
 
+setup:
+  - name: Config
+    environment:
+      SEMGREP_RULES: ${SEMGREP_RULES:-auto}
+    run: |
+      echo "SEMGREP_RULES: '$SEMGREP_RULES'"
+
 steps:
   - scan:
       command:
