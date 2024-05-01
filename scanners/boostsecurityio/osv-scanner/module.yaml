@@ -21,40 +21,42 @@ config:
     - mix.lock
     - package-lock.json
     - packages.lock.json
+    - pdm.lock
     - Pipfile.lock
     - pnpm-lock.yaml
     - poetry.lock
     - pom.xml
     - pubspec.lock
     - requirements.txt
+    - renv.lock
     - yarn.lock
 
 setup:
   - name: Install OSV-Scanner
     environment:
-      VERSION: 1.3.5
-      MACOS_X86_64_SHA: 65001b8c97559ed6fb632ae3ee574f9f4b2fb05184d3049876fd56f7557fe915
-      MACOS_ARM64_SHA: 303c1a27843fef36fd7ec06fb972e92cb120380f32dbfdc1a0af2d565103cef4
-      LINUX_X86_64_SHA: 39fb4263afa493d6058e7ad9e1fe699ce070871b7b67b5f5f9eead358c7ab2ee
-      LINUX_ARM64_SHA: f71396c832d727fb90e1c072d912ece0b9a5359cae5df47d54e88ef712d99e41
+      VERSION: 1.7.2
+      MACOS_X86_64_SHA: 4f45e9599bf467ddaf9ff59a444c9cde6d1094d0b51e6ce265c718e0d8c71f2a
+      MACOS_ARM64_SHA: dd65874c69a21e6f8feeb1c0c9b84f0c0afb9740dc7a181fe239448c549f1eda
+      LINUX_X86_64_SHA: 8e89b8bca569c8abe3614b3ce403c6c0e8a9a555b295d9fa21628af6921e65d0
+      LINUX_ARM64_SHA: 929eade915a805c350745a76b275ed400b4e8d4c769a17be3f0084cf05197996
     run: |
       BINARY_URL="https://github.com/google/osv-scanner/releases/download/v${VERSION}"
       ARCH=$(uname -m)
       case "$(uname -sm)" in
         "Darwin x86_64")
-          BINARY_URL="${BINARY_URL}/osv-scanner_${VERSION}_darwin_amd64"
+          BINARY_URL="${BINARY_URL}/osv-scanner_darwin_amd64"
           SHA="${MACOS_X86_64_SHA} osv-scanner"
           ;;
         "Darwin arm64")
-          BINARY_URL="${BINARY_URL}/osv-scanner_${VERSION}_darwin_arm64"
+          BINARY_URL="${BINARY_URL}/osv-scanner_darwin_arm64"
           SHA="${MACOS_ARM64_SHA} osv-scanner"
           ;;
         "Linux x86_64")
-          BINARY_URL="${BINARY_URL}/osv-scanner_${VERSION}_linux_amd64"
+          BINARY_URL="${BINARY_URL}/osv-scanner_linux_amd64"
           SHA="${LINUX_X86_64_SHA} osv-scanner"
           ;;
         "Linux aarch64")
-          BINARY_URL="${BINARY_URL}/osv-scanner_${VERSION}_linux_arm64"
+          BINARY_URL="${BINARY_URL}/osv-scanner_linux_arm64"
           SHA="${LINUX_ARM64_SHA} osv-scanner"
           ;;
         *)
@@ -71,7 +73,7 @@ steps:
 - scan:
     command:
       run: |
-        if ! $SETUP_PATH/osv-scanner --recursive --json .; then
+        if ! $SETUP_PATH/osv-scanner scan --recursive --call-analysis=all --format json .; then
           if test $? -gt 2; then
             echo "osv-scanner failed to execute"
             exit 1
@@ -82,7 +84,7 @@ steps:
     format: sarif
     post-processor:
       docker:
-          image: public.ecr.aws/boostsecurityio/boost-converter-sca:6caacc5@sha256:d1556a777d2e6ef1c721f489ec5f2c4a05b8a5960098dff41768e9527f558161
+          image: public.ecr.aws/boostsecurityio/boost-converter-sca:3fd32ff@sha256:f21a1539e5ed32f2cb97ee7048ec9ca825b491bfbfd86d1ac6f324cc04b5e9f4
           command: process --scanner osv
           environment:
               PYTHONIOENCODING: utf-8
