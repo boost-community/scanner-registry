@@ -74,14 +74,13 @@ steps:
   - scan:
       command:
         environment:
-          NO_COLOR: "true"
           TRIVY_ADDITIONAL_ARGS: ${TRIVY_ADDITIONAL_ARGS---ignore-unfixed}
         run: |
-          $SETUP_PATH/trivy fs ${TRIVY_ADDITIONAL_ARGS} --format json --no-progress --scanners vuln . 2>&1
+          $SETUP_PATH/trivy fs ${TRIVY_ADDITIONAL_ARGS} --format json --scanners vuln --quiet .
       format: sarif
       post-processor:
         docker:
-          image: public.ecr.aws/boostsecurityio/boost-scanner-trivy:03670e3@sha256:4a633746f474508b2f5b715ba5e56edfb1ce08e2ebb31d3e6f5eb839253f97b3
+          image: public.ecr.aws/boostsecurityio/boost-scanner-trivy:60f6c43@sha256:b6832610688ddf8e0a7b14339aefdc8dbccd33b842cc9d192b73e770acf6f7fe
           command: process
           environment:
             PYTHONIOENCODING: utf-8
