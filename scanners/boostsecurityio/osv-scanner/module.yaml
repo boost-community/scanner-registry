@@ -51,4 +51,4 @@ steps:
           export BOOST_SCAN_CMD_EXEC_PATH="/project/${BOOST_SCAN_PATH}"
         fi
         export PYTHONIOENCODING="utf-8"
-        docker run -i -e BOOST_SCAN_CMD_EXEC_PATH="$BOOST_SCAN_CMD_EXEC_PATH" -e PYTHONIOENCODING="utf-8" public.ecr.aws/boostsecurityio/boost-converter-sca:af34fec@sha256:ace32e44fb61fe313c52856bb219ea7bb5a87fd09383d8746c1aeb71a21b6e0a process --scanner osv
+        docker run -i -e BOOST_SCAN_CMD_EXEC_PATH="$BOOST_SCAN_CMD_EXEC_PATH" -e PYTHONIOENCODING="utf-8" public.ecr.aws/boostsecurityio/boost-converter-sca:da02e81@sha256:b4bfb813e16426ba49c43356a3524aac2289b69db1228ced3cbc8dcdad704a39 process --scanner osv
