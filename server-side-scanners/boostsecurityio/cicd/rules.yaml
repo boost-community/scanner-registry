@@ -11,6 +11,7 @@ rules:
     name: cicd-azure-devops-missing-authz-for-project
     pretty_name: CI/CD - Azure DevOps Project Limit Pipelines Authorization Scope
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-azure-devops-missing-authz-for-project.html'
+    recommended: true
   cicd-azure-devops-variables-settable-at-queue-time:
     categories:
       - ALL
@@ -23,6 +24,7 @@ rules:
     name: cicd-azure-devops-variables-settable-at-queue-time
     pretty_name: CI/CD - Limit Azure Pipelines Variables
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-azure-devops-variables-settable-at-queue-time.html'
+    recommended: true
   cicd-azure-devops-using-user-managed-agent-pools:
     categories:
       - ALL
@@ -35,6 +37,7 @@ rules:
     name: cicd-azure-devops-using-user-managed-agent-pools
     pretty_name: CI/CD - Azure Pipeline Self-Hosted Agent Pools
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-azure-devops-using-user-managed-agent-pools.html'
+    recommended: true
   cicd-branch-protection-absent:
     categories:
       - ALL
@@ -49,6 +52,7 @@ rules:
     name: cicd-branch-protection-absent
     pretty_name: CI/CD - Missing Repository Branch Protection
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-branch-protection.html'
+    recommended: true
   cicd-branch-protection-allows-deletion:
     categories:
       - ALL
@@ -64,6 +68,7 @@ rules:
     name: cicd-branch-protection-allows-deletion
     pretty_name: CI/CD - Branch Protection - Allows deletions of branch
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-branch-protection.html'
+    recommended: true
   cicd-branch-protection-allows-force-pushes:
     categories:
       - ALL
@@ -78,6 +83,7 @@ rules:
     name: cicd-branch-protection-allows-force-pushes
     pretty_name: CI/CD - Branch Protection - Allows force pushes
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-branch-protection.html'
+    recommended: true
   cicd-branch-protection-allows-non-linear-history:
     categories:
       - ALL
@@ -116,6 +122,7 @@ rules:
     name: cicd-branch-protection-no-code-owners-review-required
     pretty_name: CI/CD - Branch Protection - No review required from Code Owners
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-branch-protection.html'
+    recommended: true
   cicd-branch-protection-no-commit-signature-required:
     categories:
       - ALL
@@ -130,6 +137,7 @@ rules:
     name: cicd-branch-protection-no-commit-signature-required
     pretty_name: CI/CD - Branch Protection - No signed commits required
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-branch-protection.html'
+    recommended: true
   cicd-branch-protection-not-enforced-for-admins:
     categories:
       - ALL
@@ -145,6 +153,7 @@ rules:
     name: cicd-branch-protection-not-enforced-for-admins
     pretty_name: CI/CD - Branch Protection - Not enforced for admin roles
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-branch-protection.html'
+    recommended: true
   cicd-branch-protection-stale-reviews-remain-valid:
     categories:
       - ALL
@@ -159,6 +168,7 @@ rules:
     name: cicd-branch-protection-stale-reviews-remain-valid
     pretty_name: CI/CD - Branch Protection - Stale review approvals remain valid
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-branch-protection.html'
+    recommended: true
   cicd-branch-protection-zero-approval-required:
     categories:
       - ALL
@@ -173,6 +183,7 @@ rules:
     name: cicd-branch-protection-zero-approval-required
     pretty_name: CI/CD - Branch Protection - No (zero) approving review required
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-branch-protection.html'
+    recommended: true
   cicd-branch-protection-zero-status-check-required:
     categories:
       - ALL
@@ -187,6 +198,7 @@ rules:
     name: cicd-branch-protection-zero-status-check-required
     pretty_name: CI/CD - Branch Protection - No (zero) status check required
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-branch-protection.html'
+    recommended: true
   cicd-branch-protection-allows-self-reviewed-code:
     categories:
       - ALL
@@ -202,6 +214,7 @@ rules:
     pretty_name: CI/CD - Branch Protection - Allows reviewer to self-review their own
       changes
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-branch-protection.html'
+    recommended: true
   cicd-gha-can-create-and-approve-pull-requests:
     categories:
       - ALL
@@ -216,6 +229,7 @@ rules:
     name: cicd-gha-can-create-and-approve-pull-requests
     pretty_name: CI/CD - GitHub Actions can approve pull requests
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-gha-can-create-and-approve-pull-requests.html'
+    recommended: true
   cicd-gha-org-secret-publicly-visible:
     categories:
       - ALL
@@ -229,6 +243,7 @@ rules:
     name: cicd-gha-org-secret-publicly-visible
     pretty_name: CI/CD - GitHub Organization Secret visible from public repositories
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-gha-org-secret-publicly-visible.html'
+    recommended: true
   cicd-gha-org-allows-all-actions:
     categories:
       - ALL
@@ -242,6 +257,7 @@ rules:
     name: cicd-gha-org-allows-all-actions
     pretty_name: CI/CD - All GitHub Actions are allowed to run
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-gha-org-allows-all-actions.html'
+    recommended: true
   cicd-gha-read-write-token-permissions:
     categories:
       - ALL
@@ -255,6 +271,7 @@ rules:
     name: cicd-gha-read-write-token-permissions
     pretty_name: CI/CD - GitHub Actions have Read / Write permissions
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-gha-read-write-token-permission.html'
+    recommended: true
   cicd-sca-scanning-absent:
     categories:
       - ALL
@@ -269,6 +286,7 @@ rules:
     name: cicd-sca-scanning-absent
     pretty_name: CI/CD - Missing Software Composition Analysis (SCA) Scanning
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-sca-scanning-absent.html'
+    recommended: true
   cicd-scm-2fa-enforcement-absent:
     categories:
       - ALL
@@ -283,6 +301,7 @@ rules:
     name: cicd-scm-2fa-enforcement-absent
     pretty_name: CI/CD - Missing SCM 2FA Enforcement
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-scm-2fa-enforcement-absent.html'
+    recommended: true
   cicd-scm-inactive-members:
     categories:
       - ALL
@@ -335,6 +354,7 @@ rules:
     name: cicd-scm-gh-org-high-default-member-permissions
     pretty_name: CI/CD - Privileged Default Member Permissions
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-scm-gh-org-high-default-member-permissions.html'
+    recommended: true
   cicd-scm-gh-org-insecure-webhook:
     categories:
       - ALL
@@ -349,6 +369,7 @@ rules:
     name: cicd-scm-gh-org-insecure-webhook
     pretty_name: CI/CD - Insecure GitHub Webhooks
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-scm-gh-org-insecure-webhook.html'
+    recommended: true
   cicd-scm-gh-org-number-of-owners:
     categories:
       - ALL
@@ -401,6 +422,7 @@ rules:
     name: cicd-scm-gh-audit-log-oauth-app-restriction-disabled
     pretty_name: CI/CD - Audit Log - OAuth App Restriction Disabled
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-scm-gh-audit-log-oauth-app-restriction-disabled.html'
+    recommended: true
   cicd-scm-gh-audit-log-branch-protection-overriden:
     categories:
       - ALL
@@ -416,6 +438,7 @@ rules:
     name: cicd-scm-gh-audit-log-branch-protection-overriden
     pretty_name: CI/CD - Audit Log - Branch Protection Overridden by Admin
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-scm-gh-audit-log-branch-protection-overriden.html'
+    recommended: true
   cicd-scm-gl-on-push-secret-detection:
     categories:
       - ALL
@@ -430,6 +453,7 @@ rules:
     name: cicd-scm-gl-on-push-secret-detection
     pretty_name: CI/CD - GitLab On Push Secret File Detection Missing
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-scm-gl-on-push-secret-detection.html'
+    recommended: true
   cicd-scm-private-forks:
     categories:
       - ALL

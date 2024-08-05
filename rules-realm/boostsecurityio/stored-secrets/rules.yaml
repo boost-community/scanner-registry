@@ -16,3 +16,5 @@ rules:
     - cwe-798
     - cwe-522
     - owasp-top-10
+    recommended: true
+

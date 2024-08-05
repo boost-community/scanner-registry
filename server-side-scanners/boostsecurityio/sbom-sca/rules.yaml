@@ -15,3 +15,4 @@ rules:
     group: top10-vulnerable-components
     pretty_name: Dependency with known malicious behaviour
     ref: https://github.com/ossf/malicious-packages/tree/main/osv/malicious
+    recommended: true
