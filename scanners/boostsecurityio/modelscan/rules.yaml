@@ -12,3 +12,4 @@ rules:
     group: top10-vulnerable-components
     pretty_name: Serialized AI model with malicious behavior
     ref: https://github.com/protectai/modelscan?tab=readme-ov-file#what-models-and-frameworks-are-supported
+    recommended: true

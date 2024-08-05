@@ -1199,6 +1199,7 @@ rules:
     name: CWE-116
     pretty_name: 'CWE-116: Improper Encoding or Escaping of Output'
     ref: https://cwe.mitre.org/data/definitions/116.html
+    recommended: true
   CWE-1164:
     categories:
     - ALL
@@ -3541,6 +3542,7 @@ rules:
     name: CWE-20
     pretty_name: 'CWE-20: Improper Input Validation'
     ref: https://cwe.mitre.org/data/definitions/20.html
+    recommended: true
   CWE-200:
     categories:
     - ALL
@@ -3750,6 +3752,7 @@ rules:
     pretty_name: 'CWE-22: Improper Limitation of a Pathname to a Restricted Directory
       (''Path Traversal'')'
     ref: https://cwe.mitre.org/data/definitions/22.html
+    recommended: true
   CWE-220:
     categories:
     - ALL
@@ -4433,6 +4436,7 @@ rules:
     name: CWE-287
     pretty_name: 'CWE-287: Improper Authentication'
     ref: https://cwe.mitre.org/data/definitions/287.html
+    recommended: true
   CWE-288:
     categories:
     - ALL
@@ -4519,6 +4523,7 @@ rules:
     name: CWE-295
     pretty_name: 'CWE-295: Improper Certificate Validation'
     ref: https://cwe.mitre.org/data/definitions/295.html
+    recommended: true
   CWE-296:
     categories:
     - ALL
@@ -4709,6 +4714,7 @@ rules:
     name: CWE-311
     pretty_name: 'CWE-311: Missing Encryption of Sensitive Data'
     ref: https://cwe.mitre.org/data/definitions/311.html
+    recommended: true
   CWE-312:
     categories:
     - ALL
@@ -4788,6 +4794,7 @@ rules:
     name: CWE-319
     pretty_name: 'CWE-319: Cleartext Transmission of Sensitive Information'
     ref: https://cwe.mitre.org/data/definitions/319.html
+    recommended: true
   CWE-32:
     categories:
     - ALL
@@ -4864,6 +4871,7 @@ rules:
     name: CWE-326
     pretty_name: 'CWE-326: Inadequate Encryption Strength'
     ref: https://cwe.mitre.org/data/definitions/326.html
+    recommended: true
   CWE-327:
     categories:
     - ALL
@@ -4876,6 +4884,7 @@ rules:
     name: CWE-327
     pretty_name: 'CWE-327: Use of a Broken or Risky Cryptographic Algorithm'
     ref: https://cwe.mitre.org/data/definitions/327.html
+    recommended: true
   CWE-328:
     categories:
     - ALL
@@ -4892,6 +4901,7 @@ rules:
     name: CWE-328
     pretty_name: 'CWE-328: Use of Weak Hash'
     ref: https://cwe.mitre.org/data/definitions/328.html
+    recommended: true
   CWE-329:
     categories:
     - ALL
@@ -5189,6 +5199,7 @@ rules:
     name: CWE-352
     pretty_name: 'CWE-352: Cross-Site Request Forgery (CSRF)'
     ref: https://cwe.mitre.org/data/definitions/352.html
+    recommended: true
   CWE-353:
     categories:
     - ALL
@@ -6519,6 +6530,7 @@ rules:
     name: CWE-489
     pretty_name: 'CWE-489: Active Debug Code'
     ref: https://cwe.mitre.org/data/definitions/489.html
+    recommended: true
   CWE-49:
     categories:
     - ALL
@@ -6686,6 +6698,7 @@ rules:
     name: CWE-502
     pretty_name: 'CWE-502: Deserialization of Untrusted Data'
     ref: https://cwe.mitre.org/data/definitions/502.html
+    recommended: true
   CWE-506:
     categories:
     - ALL
@@ -6842,6 +6855,7 @@ rules:
     name: CWE-522
     pretty_name: 'CWE-522: Insufficiently Protected Credentials'
     ref: https://cwe.mitre.org/data/definitions/522.html
+    recommended: true
   CWE-523:
     categories:
     - ALL
@@ -7776,6 +7790,7 @@ rules:
     name: CWE-611
     pretty_name: 'CWE-611: Improper Restriction of XML External Entity Reference'
     ref: https://cwe.mitre.org/data/definitions/611.html
+    recommended: true
   CWE-612:
     categories:
     - ALL
@@ -8791,6 +8806,7 @@ rules:
     pretty_name: 'CWE-74: Improper Neutralization of Special Elements in Output Used
       by a Downstream Component (''Injection'')'
     ref: https://cwe.mitre.org/data/definitions/74.html
+    recommended: true
   CWE-749:
     categories:
     - ALL
@@ -9131,6 +9147,7 @@ rules:
     pretty_name: 'CWE-78: Improper Neutralization of Special Elements used in an OS
       Command (''OS Command Injection'')'
     ref: https://cwe.mitre.org/data/definitions/78.html
+    recommended: true
   CWE-780:
     categories:
     - ALL
@@ -9253,6 +9270,7 @@ rules:
     pretty_name: 'CWE-79: Improper Neutralization of Input During Web Page Generation
       (''Cross-site Scripting'')'
     ref: https://cwe.mitre.org/data/definitions/79.html
+    recommended: true
   CWE-790:
     categories:
     - ALL
@@ -9358,6 +9376,7 @@ rules:
     name: CWE-798
     pretty_name: 'CWE-798: Use of Hard-coded Credentials'
     ref: https://cwe.mitre.org/data/definitions/798.html
+    recommended: true
   CWE-799:
     categories:
     - ALL
@@ -9807,6 +9826,7 @@ rules:
     pretty_name: 'CWE-89: Improper Neutralization of Special Elements used in an SQL
       Command (''SQL Injection'')'
     ref: https://cwe.mitre.org/data/definitions/89.html
+    recommended: true
   CWE-9:
     categories:
     - ALL
@@ -9833,6 +9853,7 @@ rules:
     pretty_name: 'CWE-90: Improper Neutralization of Special Elements used in an LDAP
       Query (''LDAP Injection'')'
     ref: https://cwe.mitre.org/data/definitions/90.html
+    recommended: true
   CWE-908:
     categories:
     - ALL
@@ -9970,6 +9991,7 @@ rules:
     name: CWE-918
     pretty_name: 'CWE-918: Server-Side Request Forgery (SSRF)'
     ref: https://cwe.mitre.org/data/definitions/918.html
+    recommended: true
   CWE-919:
     categories:
     - ALL
@@ -9982,6 +10004,7 @@ rules:
     pretty_name: CWE-919 - Weaknesses in Mobile Applications
     description: The code introduces a vulnerability in the mobile application.
     ref: https://cwe.mitre.org/data/definitions/919.html
+    recommended: true
   CWE-920:
     categories:
     - ALL
@@ -10107,6 +10130,7 @@ rules:
     name: CWE-94
     pretty_name: 'CWE-94: Improper Control of Generation of Code (''Code Injection'')'
     ref: https://cwe.mitre.org/data/definitions/94.html
+    recommended: true
   CWE-940:
     categories:
     - ALL
@@ -10153,6 +10177,7 @@ rules:
     pretty_name: 'CWE-943: Improper Neutralization of Special Elements in Data Query
       Logic'
     ref: https://cwe.mitre.org/data/definitions/943.html
+    recommended: true
   CWE-95:
     categories:
     - ALL
@@ -10168,6 +10193,7 @@ rules:
     pretty_name: 'CWE-95: Improper Neutralization of Directives in Dynamically Evaluated
       Code (''Eval Injection'')'
     ref: https://cwe.mitre.org/data/definitions/95.html
+    recommended: true
   CWE-96:
     categories:
     - ALL
@@ -10183,6 +10209,7 @@ rules:
     pretty_name: 'CWE-96: Improper Neutralization of Directives in Statically Saved
       Code (''Static Code Injection'')'
     ref: https://cwe.mitre.org/data/definitions/96.html
+    recommended: true
   CWE-97:
     categories:
     - ALL

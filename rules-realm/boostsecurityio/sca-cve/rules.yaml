@@ -44,6 +44,7 @@ rules:
     group: top10-vulnerable-components
     pretty_name: Dependency with a High Risk Vulnerability
     ref: https://nvd.nist.gov/vuln-metrics/cvss
+    recommended: true
   cve-critical:
     categories:
       - ALL
@@ -56,3 +57,4 @@ rules:
     group: top10-vulnerable-components
     pretty_name: Dependency with a Critical Vulnerability
     ref: https://nvd.nist.gov/vuln-metrics/cvss
+    recommended: true

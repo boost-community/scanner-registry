@@ -13,6 +13,7 @@ rules:
     description: The software does not properly neutralize special elements within
       the pathname.
     ref: https://cwe.mitre.org/data/definitions/22.html
+    recommended: true
   G304:
     categories:
     - ALL
@@ -27,6 +28,7 @@ rules:
     description: The software does not properly neutralize special elements within
       the pathname.
     ref: https://cwe.mitre.org/data/definitions/22.html
+    recommended: true
   G305:
     categories:
     - ALL
@@ -41,6 +43,7 @@ rules:
     description: The software does not properly neutralize special elements within
       the pathname.
     ref: https://cwe.mitre.org/data/definitions/22.html
+    recommended: true
   G204:
     categories:
     - ALL
@@ -55,6 +58,7 @@ rules:
     description: The software does not eutralize or incorrectly neutralizes special
       elements that could modify the intended OS command.
     ref: https://cwe.mitre.org/data/definitions/78.html
+    recommended: true
   G203:
     categories:
     - ALL
@@ -69,6 +73,7 @@ rules:
     description: The software does not neutralize or incorrectly neutralizes user-controllable
       input before it is placed in output.
     ref: https://cwe.mitre.org/data/definitions/79.html
+    recommended: true
   G107:
     categories:
     - ALL
@@ -83,6 +88,7 @@ rules:
     description: The software does not properly delimit the intended arguments, options,
       or switches within that command string.
     ref: https://cwe.mitre.org/data/definitions/918.html
+    recommended: true
   G201:
     categories:
     - ALL
@@ -97,6 +103,7 @@ rules:
     description: The software does not neutralize or incorrectly neutralizes special
       elements that could modify the intended SQL command.
     ref: https://cwe.mitre.org/data/definitions/89.html
+    recommended: true
   G202:
     categories:
     - ALL
@@ -111,6 +118,7 @@ rules:
     description: The software does not neutralize or incorrectly neutralizes special
       elements that could modify the intended SQL command.
     ref: https://cwe.mitre.org/data/definitions/89.html
+    recommended: true
   G601:
     categories:
     - ALL
@@ -186,6 +194,7 @@ rules:
     description: The product exposes sensitive information to an actor that is not
       explicitly authorized to have access to that information.
     ref: https://cwe.mitre.org/data/definitions/489.html
+    recommended: true
   G103:
     categories:
     - ALL
@@ -246,6 +255,7 @@ rules:
     pretty_name: 'G402: Look for bad TLS connection settings'
     description: The software does not validate, or incorrectly validates, a certificate.
     ref: https://cwe.mitre.org/data/definitions/295.html
+    recommended: true
   G403:
     categories:
     - ALL
@@ -258,6 +268,7 @@ rules:
     description: The code contains a weakness related to the design and implementation
       of data confidentiality and integrity.
     ref: https://cwe.mitre.org/data/definitions/310.html
+    recommended: true
   G106:
     categories:
     - ALL
@@ -271,6 +282,7 @@ rules:
     description: The software performs a key exchange with an actor without verifying
       the identity of that actor.
     ref: https://cwe.mitre.org/data/definitions/322.html
+    recommended: true
   G401:
     categories:
     - ALL
@@ -309,6 +321,7 @@ rules:
     description: The use of a broken or risky cryptographic algorithm is an unnecessary
       risk that may result in the exposure of sensitive information.
     ref: https://cwe.mitre.org/data/definitions/327.html
+    recommended: true
   G503:
     categories:
     - ALL
@@ -322,6 +335,7 @@ rules:
     description: The use of a broken or risky cryptographic algorithm is an unnecessary
       risk that may result in the exposure of sensitive information.
     ref: https://cwe.mitre.org/data/definitions/327.html
+    recommended: true
   G504:
     categories:
     - ALL
@@ -335,6 +349,7 @@ rules:
     description: The use of a broken or risky cryptographic algorithm is an unnecessary
       risk that may result in the exposure of sensitive information.
     ref: https://cwe.mitre.org/data/definitions/327.html
+    recommended: true
   G505:
     categories:
     - ALL
@@ -360,6 +375,7 @@ rules:
     description: The product uses a Pseudo-Random Number Generator (PRNG) in a security
       context, but the PRNG's algorithm is not cryptographically strong.
     ref: https://cwe.mitre.org/data/definitions/338.html
+    recommended: true
   G303:
     categories:
     - ALL
@@ -430,6 +446,7 @@ rules:
     description: The software does not properly anticipate or handle exceptional conditions
       that rarely occur during normal operation of the software.
     ref: https://cwe.mitre.org/data/definitions/703.html
+    recommended: true
   G101:
     categories:
     - ALL
@@ -448,3 +465,4 @@ rules:
       or cryptographic key, which it uses for its own inbound authentication, outbound
       communication to external components, or encryption of internal data.
     ref: https://cwe.mitre.org/data/definitions/798.html
+    recommended: true

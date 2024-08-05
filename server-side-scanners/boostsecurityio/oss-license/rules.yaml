@@ -9,3 +9,4 @@ rules:
     group: license-violations
     pretty_name: Package with Unauthorized License
     ref: https://docs.boostsecurity.io/rules/index.html
+    recommended: true

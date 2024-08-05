@@ -29,6 +29,7 @@ rules:
     name: cert-insecure-signing-algorithm
     pretty_name: Cert Insecure Signing Algorithm
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/x509-cert-insecure-signing-algorithm.html'
+    recommended: true
   cert-insufficient-key-length:
     categories:
     - ALL
@@ -40,6 +41,7 @@ rules:
     name: cert-insufficient-key-length
     pretty_name: Cert Insufficient Key Length
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/x509-cert-insufficient-key-length.html'
+    recommended: true
   cicd-binary-artifacts-stored-in-scm:
     categories:
     - ALL
@@ -55,6 +57,7 @@ rules:
     name: cicd-binary-artifacts-stored-in-scm
     pretty_name: CI/CD - Binary artifacts stored in SCM
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-binary-artifacts-stored-in-scm.html'
+    recommended: true
   cicd-circleci-unversioned-orb:
     categories:
     - ALL
@@ -67,6 +70,7 @@ rules:
     name: cicd-circleci-unversioned-orb
     pretty_name: CI/CD - CircleCI Unversionned Orb
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-circleci-unversioned-orb.html'
+    recommended: true
   cicd-circleci-shell-injection:
     categories:
     - ALL
@@ -79,6 +83,7 @@ rules:
     name: cicd-circleci-shell-injection
     pretty_name: CI/CD - CircleCI Shell Injection
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-circleci-shell-injection.html'
+    recommended: true
   cicd-gha-unsecure-commands:
     categories:
     - ALL
@@ -92,6 +97,7 @@ rules:
     name: cicd-gha-unsecure-commands
     pretty_name: CI/CD - GitHub Action Unsecure Commands
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-gha-unsecure-commands.html'
+    recommended: true
   cicd-unpinned-dependencies:
     categories:
     - ALL
@@ -107,6 +113,7 @@ rules:
     name: cicd-unpinned-dependencies
     pretty_name: CI/CD - Using unpinned dependencies
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-unpinned-dependencies.html'
+    recommended: true
   cicd-gha-workflow-dispatch-inputs:
     categories:
     - ALL
@@ -119,3 +126,4 @@ rules:
     name: cicd-gha-workflow-dispatch-inputs
     pretty_name: CI/CD - GitHub Action uses inputs
     ref: '{BOOSTSEC_DOC_BASE_URL}/rules/cicd-gha-workflow-dispatch-inputs.html'
+    recommended: true
