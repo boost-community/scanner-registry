@@ -1,4 +1,18 @@
 import:
   - boostsecurityio/sca-cve
 
-rules: {}
+rules:
+  use-of-unsafe-ai-model:
+    categories:
+      - ALL
+      - boost-baseline
+      - boost-hardened
+      - supply-chain
+      - owasp-top-10
+      - unsafe-ai-component
+    description: An Unsafe AI model is being loaded. There are dangerous arbitrary code execution attacks that can be perpetrated when you load an unsafe AI model.
+    name: use-of-unsafe-ai-model
+    group: top10-vulnerable-components
+    pretty_name: Use of Unsafe AI model
+    ref: https://huggingface.co/docs/hub/en/security-pickle
+    recommended: true

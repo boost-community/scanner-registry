@@ -6,7 +6,7 @@ rules:
       - boost-hardened
       - supply-chain
       - vulnerable-and-outdated-components
-      - dependency-with-malicious-behaviour
+      - ai-model-with-malicious-behaviour
     description: The serialized AI model potentially has has malicious behavior given that it overrides the deserialization procedure in a way that could lead to arbitrary code execution.
     name: serialized-ai-model-with-malicious-behavior
     group: top10-vulnerable-components
