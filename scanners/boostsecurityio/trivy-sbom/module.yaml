@@ -12,11 +12,11 @@ config:
 setup:
   - name: download trivy
     environment:
-      VERSION: 0.53.0
-      LINUX_X86_64_SHA: 9ddc7209f575990d07babe824e4c66e5dcb9eea010cc93a7c7a4f2014d1d6190
-      LINUX_ARM64_SHA: 81e6920b904a0ea40b16d911ff4e7dfc546bff749062f86164188f9272686457
-      MACOS_X86_64_SHA: 8d9f8b763eb8271dbdb6a2e8289ec2df3ae31e4f1ae58c7c437b981dc3b1c98b
-      MACOS_ARM64_SHA: dfb17fad8b25af497bf9c27f6946aed8d13e2375add3e17e372369f2a8305f96
+      VERSION: 0.56.1
+      LINUX_X86_64_SHA: 66aacdb5bdc90cef055430078d64414ecb99e37b1ca4ba0a4c0955e694aa9040
+      LINUX_ARM64_SHA: c1067e0e3717175f5d53679978c33ffdd937ee433e5ae70380a39e0d3f10a888
+      MACOS_X86_64_SHA: dd84313a547e36a447e26f4eb1cfcad3eaf442b1e7215eaffa883f90283b0741
+      MACOS_ARM64_SHA: 01efe7c0702cd9f95daa0cbd3b3d0abd192ac037c6491c1f1eb41f525d163a94
     run: |
       BINARY_URL="https://github.com/aquasecurity/trivy/releases/download/v${VERSION}"
       ARCH=$(uname -m)
@@ -56,6 +56,7 @@ steps:
       command:
         environment:
           NO_COLOR: "true"
+          TRIVY_DB_REPOSITORY: public.ecr.aws/aquasecurity/trivy-db:2,ghcr.io/aquasecurity/trivy-db:2
         run: |
             $SETUP_PATH/trivy fs --format=cyclonedx --license-full --no-progress --scanners vuln --cache-dir=/tmp/trivy/ . 2>&1
       format: cyclonedx
