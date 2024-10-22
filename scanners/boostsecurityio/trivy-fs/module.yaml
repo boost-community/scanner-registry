@@ -77,6 +77,7 @@ steps:
           NO_COLOR: "true"
           TRIVY_ADDITIONAL_ARGS: ${TRIVY_ADDITIONAL_ARGS---ignore-unfixed}
           TRIVY_DB_REPOSITORY: public.ecr.aws/aquasecurity/trivy-db:2,ghcr.io/aquasecurity/trivy-db:2
+          TRIVY_JAVA_DB_REPOSITORY: public.ecr.aws/aquasecurity/trivy-java-db:1,ghcr.io/aquasecurity/trivy-java-db:1
         run: |
           $SETUP_PATH/trivy fs ${TRIVY_ADDITIONAL_ARGS} --format json --no-progress --scanners vuln . 2>&1
       format: sarif
