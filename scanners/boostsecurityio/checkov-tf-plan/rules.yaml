@@ -14785,4 +14785,15 @@ rules:
     pretty_name: Ensure KMS symmetric key is rotated.
     recommended: true
     ref: https://www.checkov.io/5.Policy%20Index/all.html
+  BOOST_INVALID_TF_TAGS:
+    categories:
+    - ALL
+    - boost-hardened
+    - cloud-resources-tagging-requirements
+    description: Check that Terraform Resource are tagged according to the expected policy.
+    group: cloud-weak-configuration
+    name: BOOST_INVALID_TF_TAGS
+    pretty_name: Ensure Terraform Resources are tagged appropriately
+    recommended: true
+    ref: https://docs.boostsecurity.io/
 
