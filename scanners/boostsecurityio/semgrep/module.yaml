@@ -12,22 +12,29 @@ config:
   - .semgrep/*
 
 setup:
-  - name: Utility scripts
+  - name: Validate rules
+    environment:
+      SEMGREP_RULES: ${SEMGREP_RULES:-https://assets.build.boostsecurity.io/semgrep-rules/stable/all-sast-rules.yml}
     run: |
-      mkdir -p $SETUP_PATH/pre-scan-checks/
-      cp $SETUP_PATH/../../registry/scanners/boostsecurityio/semgrep/prescan_checks.sh $SETUP_PATH/pre-scan-checks/semgrep
+      echo "SEMGREP_RULES set to: '$SEMGREP_RULES'"
+      for rule in $SEMGREP_RULES; do
+        case "$rule" in
+          .semgrep/*|http://*|https://*)
+            # valid rule token; do nothing
+            ;;
+          *)
+            echo "Semgrep Community Rules cannot be used. Provide a URL or relative path to rules file or leave blank for Boost curated rules."
+            exit 1
+            ;;
+        esac
+      done
 
 steps:
-  - run: |
-      $SETUP_PATH/pre-scan-checks/semgrep
-    environment:
-      SEMGREP_RULES: ${SEMGREP_RULES:-boost/sast/rules/semgrep@stable}
   - scan:
       command:
         docker:
           image: returntocorp/semgrep:1.114.0@sha256:0cd75960cfec2215ff734a4f6379bbbb6edb82de0c24593dd0a70ec65e9860a9
-          command: |
-            semgrep scan --config ./.semgrep --oss-only --sarif --quiet --disable-version-check --metrics=off .
+          command: semgrep scan --oss-only --sarif --quiet --disable-version-check --metrics=off .
           workdir: /src
           environment:
             XDG_CONFIG_HOME: /tmp
