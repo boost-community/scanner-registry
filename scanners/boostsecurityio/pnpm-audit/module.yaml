@@ -1,0 +1,33 @@
+api_version: 1.0
+
+
+id: boostsecurityio/pnpm-audit
+name: pnpm-audit
+namespace: boostsecurityio/pnpm-audit
+scan_types:
+  - sca
+
+config:
+  support_diff_scan: true
+  include_files:
+    - pnpm-lock.yaml
+
+steps:
+  - scan:
+      command:
+        docker:
+          image: node:18.12-alpine3.16@sha256:1f09c210a17508d34277971b19541a47a26dc5a641dedc03bd28cff095052996
+          command: |
+            sh -c 'npm install -g pnpm@latest-10 && pnpm audit --json $PNPM_AUDIT_ARGS || true'
+          workdir: /src
+          environment:
+            HOME: /tmp
+            PNPM_AUDIT_ARGS: ${PNPM_AUDIT_ARGS:-}
+      format: sarif
+      post-processor:
+        docker:
+            image: public.ecr.aws/boostsecurityio/boost-converter-sca:6e4b6c1@sha256:417c90b672b016b01dac84a4cf24d3a042503b6ddcfd1ba22ebd24d229f78883
+            command: |
+              process --scanner pnpm-audit
+            environment:
+                PYTHONIOENCODING: utf-8
