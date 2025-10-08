@@ -1,0 +1,12 @@
+title = "Custom Boost Gitleaks configuration"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "generic-api-key"
+
+ [[rules.allowlists]]
+ regexTarget = "line"  
+ regexes = [ '''(?i)publicKeyToken="[^"]+"''' ]
+ paths = [ '''(?i)web\.config''' ]

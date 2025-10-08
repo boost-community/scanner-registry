@@ -7,6 +7,11 @@ namespace: boostsecurityio/bundler-audit
 scan_types:
   - sca
 
+setup:
+  - name: Utility scripts
+    run: |
+      mkdir -p $SETUP_PATH/pre-scan-checks/
+      cp $SETUP_PATH/../../registry/scanners/boostsecurityio/bundler-audit/prescan_checks.sh $SETUP_PATH/pre-scan-checks/bundler
 
 config:
   support_diff_scan: true
@@ -15,6 +20,7 @@ config:
     - ${GEMFILE_LOCK:-Gemfile.lock}
 
 steps:
+  - run: $SETUP_PATH/pre-scan-checks/bundler
   - scan:
       command:
         docker:

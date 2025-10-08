@@ -1,0 +1,23 @@
+api_version: 1.0
+
+id: boostsecurityio/malcontent
+name: Malcontent
+namespace: boostsecurityio/malcontent
+scan_types:
+  - sast
+
+config:
+  support_diff_scan: true
+
+steps:
+  - scan:
+      command:
+        docker:
+          image: cgr.dev/chainguard/malcontent:latest
+          command: --format=json --min-risk=medium analyze .
+          workdir: /src
+      format: sarif
+      post-processor:
+        docker:
+          image: public.ecr.aws/boostsecurityio/boost-scanner-malcontent:0a559cb@sha256:dc4d24ab8bd8f0e90e9c789cb3700065491232563e9451a9829443ab123e915e
+          command: process

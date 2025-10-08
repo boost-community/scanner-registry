@@ -9,6 +9,7 @@ scan_types:
 config:
   require_full_repo: true
   support_diff_scan: true
+  support_incremental: true
   include_files:
     # C/C++ https://trivy.dev/v0.61/docs/coverage/language/c/
     - conan.lock
@@ -51,6 +52,10 @@ config:
     - Manifest.toml
 
 setup:
+  - name: Utility scripts
+    run: |
+      mkdir -p $SETUP_PATH/pre-scan-checks/
+      cp $SETUP_PATH/../../registry/scanners/boostsecurityio/trivy-fs/prescan_checks.sh $SETUP_PATH/pre-scan-checks/trivy
   - name: download trivy
     environment:
       VERSION: 0.61.0
@@ -93,6 +98,7 @@ setup:
       chmod +x trivy
 
 steps:
+  - run: $SETUP_PATH/pre-scan-checks/trivy
   - scan:
       command:
         environment:

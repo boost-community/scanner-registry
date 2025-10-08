@@ -10,15 +10,59 @@ scan_types:
 config:
   require_full_repo: true
   support_diff_scan: true
+  include_files:
+    # C/C++ https://trivy.dev/v0.61/docs/coverage/language/c/
+    - conan.lock
+    # Dart https://trivy.dev/v0.61/docs/coverage/language/dart/
+    - pubspec.lock
+    # Dotnet https://trivy.dev/v0.61/docs/coverage/language/dotnet/
+    - "*.deps.json"
+    - packages.config
+    - "*Packages.props"
+    - packages.lock.json
+    # Elixir https://trivy.dev/v0.61/docs/coverage/language/elixir/
+    - mix.lock
+    # Go https://trivy.dev/v0.61/docs/coverage/language/golang/
+    - go.mod
+    # Java https://trivy.dev/v0.61/docs/coverage/language/java/
+    - "*gradle.lockfile"
+    - pom.xml
+    - "*.sbt.lock"
+    # NodeJs https://trivy.dev/v0.61/docs/coverage/language/nodejs/
+    - package-lock.json
+    - yarn.lock
+    - pnpm-lock.yaml
+    # Php https://trivy.dev/v0.61/docs/coverage/language/php/
+    - composer.lock
+    - installed.json
+    # Python https://trivy.dev/v0.61/docs/coverage/language/python/
+    - Pipfile.lock
+    - requirements.txt
+    - poetry.lock
+    - uv.lock
+    # Ruby https://trivy.dev/v0.61/docs/coverage/language/ruby/
+    - Gemfile.lock
+    - .gemspec
+    # RUST https://trivy.dev/v0.61/docs/coverage/language/rust/
+    - Cargo.lock
+    # Swift https://trivy.dev/v0.61/docs/coverage/language/swift/
+    - Package.resolved
+    - Podfile.lock
+    # Julia https://trivy.dev/v0.61/docs/coverage/language/julia/
+    - Manifest.toml
 
 setup:
+  - name: Utility scripts
+    run: |
+      mkdir -p $SETUP_PATH/pre-scan-checks/
+      cp $SETUP_PATH/../../registry/scanners/boostsecurityio/trivy-fs/prescan_checks.sh $SETUP_PATH/pre-scan-checks/trivy
   - name: download trivy
     environment:
-      VERSION: 0.56.1
-      LINUX_X86_64_SHA: 66aacdb5bdc90cef055430078d64414ecb99e37b1ca4ba0a4c0955e694aa9040
-      LINUX_ARM64_SHA: c1067e0e3717175f5d53679978c33ffdd937ee433e5ae70380a39e0d3f10a888
-      MACOS_X86_64_SHA: dd84313a547e36a447e26f4eb1cfcad3eaf442b1e7215eaffa883f90283b0741
-      MACOS_ARM64_SHA: 01efe7c0702cd9f95daa0cbd3b3d0abd192ac037c6491c1f1eb41f525d163a94
+      VERSION: 0.61.0
+      LINUX_X86_64_SHA: 31af7049380abcdc422094638cc33364593f0ccc89c955dd69d27aca288ae79c
+      LINUX_ARM64_SHA: d18a9ec7d408d541182e7f3165cdaa934fd05f586e4f22ce547ed1f1640e8c3f
+      MACOS_X86_64_SHA: 7454cd0d31dec55498baa2fbec9c4034c23ab52df45bb256c29297f2099129f8
+      MACOS_ARM64_SHA: 9ad04f68b7823109b93d3c6b4e069d932348bf2847e4ccd197787f87f346138e
     run: |
       BINARY_URL="https://github.com/aquasecurity/trivy/releases/download/v${VERSION}"
       ARCH=$(uname -m)
@@ -54,6 +98,7 @@ setup:
       chmod +x trivy
 
 steps:
+  - run: $SETUP_PATH/pre-scan-checks/trivy
   - scan:
       command:
         environment:

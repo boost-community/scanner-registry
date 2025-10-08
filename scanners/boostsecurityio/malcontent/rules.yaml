@@ -1,0 +1,3 @@
+import:
+  - boostsecurityio/sbom-sca
+  - boostsecurityio/oss-license

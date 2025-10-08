@@ -2942,6 +2942,20 @@ rules:
     name: CWE-142
     pretty_name: 'CWE-142: Improper Neutralization of Value Delimiters'
     ref: https://cwe.mitre.org/data/definitions/142.html
+  CWE-1427:
+    categories:
+    - ALL
+    - boost-baseline
+    - boost-hardened
+    - owasp-top-10
+    description: The product uses externally-provided data to build prompts provided 
+      to large language models (LLMs), but the way these prompts are constructed causes 
+      the LLM to fail to distinguish between user-supplied inputs and developer provided 
+      system directives.
+    group: top10-injection
+    name: CWE-1427
+    pretty_name: 'CWE-1427: Improper Neutralization of Input Used for LLM Prompting'
+    ref: https://cwe.mitre.org/data/definitions/1427.html
   CWE-143:
     categories:
     - ALL

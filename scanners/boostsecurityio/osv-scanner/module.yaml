@@ -10,29 +10,56 @@ scan_types:
 
 config:
   support_diff_scan: true
-  include_files:
-    - buildscript-gradle.lockfile
-    - Cargo.lock
-    - composer.lock
+  include_files: # https://google.github.io/osv-scanner/supported-languages-and-lockfiles/#supported-lockfilesmanifests
+    # C/C++
     - conan.lock
-    - Gemfile.lock
-    - go.mod
-    - gradle.lockfile
-    - mix.lock
-    - package-lock.json
-    - packages.lock.json
-    - pdm.lock
-    - Pipfile.lock
-    - pnpm-lock.yaml
-    - poetry.lock
-    - pom.xml
+    # Dart
     - pubspec.lock
-    - requirements.txt
-    - renv.lock
+    # Elixir
+    - mix.lock
+    # Go
+    - go.mod
+    # Haskell
+    - cabal.project.freeze
+    - stack.yaml.lock
+    # Java
+    - buildscript-gradle.lockfile
+    - gradle.lockfile
+    - verification-metadata.xml
+    - pom.xml
+    # Javascript
+    - package-lock.json
+    - pnpm-lock.yaml
     - yarn.lock
+    # .Net
+    - deps.json
+    - packages.config
+    - packages.lock.json
+    # PHP
+    - composer.lock
+    # Python
+    - Pipfile.lock
+    - poetry.lock
+    - requirements.txt
+    - pdm.lock
+    - uv.lock
+    # R
+    - renv.lock
+    # Ruby
+    - Gemfile.lock
+    # Rust
+    - Cargo.lock
+    # Custom lockfile http://google.github.io/osv-scanner/supported-languages-and-lockfiles/#custom-lockfiles
+    - osv-scanner.json
 
+setup:
+  - name: Utility scripts
+    run: |
+      mkdir -p $SETUP_PATH/pre-scan-checks/
+      cp $SETUP_PATH/../../registry/scanners/boostsecurityio/osv-scanner/prescan_checks.sh $SETUP_PATH/pre-scan-checks/osv-scanner
 
 steps:
+- run: $SETUP_PATH/pre-scan-checks/osv-scanner
 - scan:
     command:
       docker:

@@ -11,13 +11,37 @@ scan_types:
 
 config:
   support_diff_scan: true
-
+  include_files:
+    - "*.crx"
+    - "*.deb"
+    - "*.dex"
+    - "*.dey"
+    - "*.elf"
+    - "*.o"
+    - "*.so"
+    - "*.iso"
+    - "*.class"
+    - "*.jar"
+    - "*.bundle"
+    - "*.dylib"
+    - "*.lib"
+    - "*.msi"
+    - "*.dll"
+    - "*.drv"
+    - "*.efi"
+    - "*.exe"
+    - "*.ocx"
+    - "*.pyc"
+    - "*.pyo"
+    - "*.par"
+    - "*.rpm"
+    - "*.whl"
 
 steps:
     - scan:
         command:
           docker:
-            image: public.ecr.aws/boostsecurityio/boost-scanner-native:712aad7@sha256:a98544097bf7b3fbdb85eb78f15b1a0a989808ec42125172fa1511c9ff538372
+            image: public.ecr.aws/boostsecurityio/boost-scanner-native:e6929e6@sha256:6ac361deefa2173f9a9cddc0b9f100b2ec7c79277be05b6f1e029e67d2c8507d
             command: scanner scan
             workdir: /src
           name: scanner

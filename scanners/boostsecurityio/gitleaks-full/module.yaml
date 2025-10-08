@@ -51,6 +51,9 @@ setup:
     tar --no-same-owner -zxf gitleaks.tgz gitleaks
     rm gitleaks.tgz
     chmod +x gitleaks
+- name: Copy Boost Gitleaks Rules
+  run: |
+      cp $SETUP_PATH/../../registry/scanners/boostsecurityio/gitleaks/boost.toml $SETUP_PATH/
 
 steps:
   - scan:
@@ -59,13 +62,13 @@ steps:
         environment:
           GITLEAKS_CONFIG: ${GITLEAKS_CONFIG:-}
         run: |
+          [ -z "$GITLEAKS_CONFIG" ] && [ -z "$GITLEAKS_CONFIG_TOML" ] && [ ! -f ".gitleaks.toml" ] && cp $SETUP_PATH/boost.toml .gitleaks.toml || true
           $SETUP_PATH/gitleaks git --no-banner --exit-code 0 --report-format sarif --report-path $SETUP_PATH/gitleaks-output.sarif -l error .
           cat $SETUP_PATH/gitleaks-output.sarif
-          
       post-processor:
         - docker:
             command: process --git-scan
-            image: public.ecr.aws/boostsecurityio/boost-scanner-gitleaks:2fd5ac5@sha256:ce3c3d85a812c31aa4aa1c30ead38768498de5138e957fb05d602f47d6f736e8
+            image: public.ecr.aws/boostsecurityio/boost-scanner-gitleaks:2f0cbcc@sha256:02b26b5624cb9d325cbc74a9f41f9c7b61757e15e20b13e25664cb734c9c6be3
         - docker:
             command: process --gitleaks-full
             image: public.ecr.aws/boostsecurityio/boost-scanner-keyscope:458e3dd@sha256:6b611b085271e2c8ed15590f536fd4a29221a11752ef7525bbb60be9ad241902

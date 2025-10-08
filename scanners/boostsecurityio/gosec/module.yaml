@@ -12,7 +12,14 @@ config:
   require_full_repo: true
   support_diff_scan: true
 
+setup:
+  - name: Utility scripts
+    run: |
+      mkdir -p $SETUP_PATH/pre-scan-checks/
+      cp $SETUP_PATH/../../registry/scanners/boostsecurityio/gosec/prescan_checks.sh $SETUP_PATH/pre-scan-checks/gosec
+
 steps:
+  - run: $SETUP_PATH/pre-scan-checks/gosec
   - scan:
       command:
         docker:

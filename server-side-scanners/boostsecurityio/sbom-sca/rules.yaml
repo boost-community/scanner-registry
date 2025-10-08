@@ -24,6 +24,7 @@ rules:
       - boost-hardened
       - supply-chain
       - vulnerable-and-outdated-components
+      - end-of-life-not-maintained
     description: This package has reached its end-of-life (EOL), meaning it is no longer maintained or supported by its maintainers. 
       EOL packages do not receive security updates, bug fixes, or performance improvements, making them a significant risk if vulnerabilities are discovered. 
       It is strongly recommended to upgrade to a supported version or migrate to an alternative maintained package to ensure continued security and stability of your application.
