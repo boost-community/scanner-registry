@@ -56,11 +56,11 @@ setup:
       cp $SETUP_PATH/../../registry/scanners/boostsecurityio/trivy-fs/prescan_checks.sh $SETUP_PATH/pre-scan-checks/trivy
   - name: download trivy
     environment:
-      VERSION: 0.61.0
-      LINUX_X86_64_SHA: 31af7049380abcdc422094638cc33364593f0ccc89c955dd69d27aca288ae79c
-      LINUX_ARM64_SHA: d18a9ec7d408d541182e7f3165cdaa934fd05f586e4f22ce547ed1f1640e8c3f
-      MACOS_X86_64_SHA: 7454cd0d31dec55498baa2fbec9c4034c23ab52df45bb256c29297f2099129f8
-      MACOS_ARM64_SHA: 9ad04f68b7823109b93d3c6b4e069d932348bf2847e4ccd197787f87f346138e
+      VERSION: 0.67.0
+      LINUX_X86_64_SHA: 5b10e9bba00a508b0f3bcb98e78f1039f7eee26b57c9266961a415642a9208ab
+      LINUX_ARM64_SHA: 0f3ac33954dd918cad708bdf06731b4aa8cc14b12e879932b4ceef2f22640a9e
+      MACOS_X86_64_SHA: ae8a13d8c3abf7f7e7981ac1a5f5ec094d68835f2aac67da102d4ba36e820c3c
+      MACOS_ARM64_SHA: feea8727b501f654683774fe0f98a9c1a128c7d8bcd7c942a8e6f6d05b33bd4b
     run: |
       BINARY_URL="https://github.com/aquasecurity/trivy/releases/download/v${VERSION}"
       ARCH=$(uname -m)
