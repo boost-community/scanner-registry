@@ -11,24 +11,6 @@ config:
   include_files:
   - .semgrep/*
 
-setup:
-  - name: Validate rules
-    environment:
-      SEMGREP_RULES: ${SEMGREP_RULES:-https://assets.build.boostsecurity.io/semgrep-rules/stable/all-sast-rules.yml}
-    run: |
-      echo "SEMGREP_RULES set to: '$SEMGREP_RULES'"
-      for rule in $SEMGREP_RULES; do
-        case "$rule" in
-          .semgrep/*|http://*|https://*)
-            # valid rule token; do nothing
-            ;;
-          *)
-            echo "Semgrep Community Rules cannot be used. Provide a URL or relative path to rules file or leave blank for Boost curated rules."
-            exit 1
-            ;;
-        esac
-      done
-
 steps:
   - scan:
       command:
