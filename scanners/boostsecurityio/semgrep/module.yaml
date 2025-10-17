@@ -4,10 +4,10 @@ id: boostsecurityio/semgrep
 name: Semgrep
 namespace: boostsecurityio/semgrep
 scan_types:
-  - sast
+  - sbom
 
 config:
-  support_diff_scan: true
+  support_diff_scan: false
   include_files:
   - .semgrep/*
 
