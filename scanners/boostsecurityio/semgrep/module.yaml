@@ -11,15 +11,11 @@ config:
   include_files:
   - .semgrep/*
 
-steps:
-  - scan:
-      command:
-        environment:
-          NO_COLOR: "true"
-          TRIVY_ADDITIONAL_ARGS: ${TRIVY_ADDITIONAL_ARGS---ignore-unfixed}
-          TRIVY_DB_REPOSITORY: public.ecr.aws/aquasecurity/trivy-db:2,ghcr.io/aquasecurity/trivy-db:2
-          TRIVY_JAVA_DB_REPOSITORY: public.ecr.aws/aquasecurity/trivy-java-db:1,ghcr.io/aquasecurity/trivy-java-db:1
-        run: |
+setup:
+  - name: Validate rules
+    environment:
+      SEMGREP_RULES: ${SEMGREP_RULES:-https://assets.build.boostsecurity.io/semgrep-rules/stable/all-sast-rules.yml}
+    run: |
           echo "CREATING NEW SLN"
           dotnet new sln -n temp
           echo "MERGING SLN"
@@ -29,3 +25,4 @@ steps:
           echo "RUNNING TOOL"
           ./.dotnet-tools/dotnet-CycloneDX $(pwd)/temp.sln --output temp_sbom.json --output-format json
           cat temp_sbom.json/bom.json
+
