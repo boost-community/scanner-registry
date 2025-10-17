@@ -25,4 +25,32 @@ setup:
       echo "RUNNING TOOL"
       ./.dotnet-tools/dotnet-CycloneDX $(pwd)/temp.sln --output temp_sbom.json --output-format json
       cat temp_sbom.json/bom.json
+      echo "SEMGREP_RULES set to: '$SEMGREP_RULES'"
+      for rule in $SEMGREP_RULES; do
+        case "$rule" in
+          .semgrep/*|http://*|https://*)
+            # valid rule token; do nothing
+            ;;
+          *)
+            echo "Semgrep Community Rules cannot be used. Provide a URL or relative path to rules file or leave blank for Boost curated rules."
+            exit 1
+            ;;
+        esac
+      done
 
+steps:
+  - scan:
+      command:
+        docker:
+          image: returntocorp/semgrep:1.114.0@sha256:0cd75960cfec2215ff734a4f6379bbbb6edb82de0c24593dd0a70ec65e9860a9
+          command: semgrep scan --oss-only --sarif --quiet --disable-version-check --metrics=off .
+          workdir: /src
+          environment:
+            XDG_CONFIG_HOME: /tmp
+            HOME: /tmp
+            SEMGREP_RULES: ${SEMGREP_RULES:-https://assets.build.boostsecurity.io/semgrep-rules/stable/all-sast-rules.yml}
+      format: sarif
+      post-processor:
+        docker:
+          image: public.ecr.aws/boostsecurityio/boost-scanner-semgrep:2e1c86f@sha256:947f8cf38e8bfa8da0826e389e86c77f761a12106d1d9a39c0ea911dc2dce301
+          command: process
