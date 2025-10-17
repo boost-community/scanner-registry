@@ -20,6 +20,7 @@ setup:
       dotnet new sln -n temp
       echo "MERGING SLN"
       find . -name "*.csproj" -exec dotnet sln temp.sln add {} \;
+      cat temp.sln
       echo "INSTALLING TOOL"
       dotnet tool install CycloneDX --tool-path ./.dotnet-tools
       echo "RUNNING TOOL"
