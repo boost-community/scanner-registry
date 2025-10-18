@@ -26,7 +26,3 @@ steps:
           ./.dotnet-tools/dotnet-CycloneDX $(pwd)/temp.sln --output temp_sbom.json --output-format json
           cat temp_sbom.json/bom.json
       format: sarif
-      post-processor:
-        docker:
-          image: public.ecr.aws/boostsecurityio/boost-scanner-semgrep:2e1c86f@sha256:947f8cf38e8bfa8da0826e389e86c77f761a12106d1d9a39c0ea911dc2dce301
-          command: process
