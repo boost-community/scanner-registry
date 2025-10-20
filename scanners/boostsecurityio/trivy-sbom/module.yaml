@@ -8,107 +8,20 @@ scan_types:
 
 config:
   support_diff_scan: false
-  include_files:
-    # C/C++ https://trivy.dev/v0.61/docs/coverage/language/c/
-    - conan.lock
-    # Dart https://trivy.dev/v0.61/docs/coverage/language/dart/
-    - pubspec.lock
-    # Dotnet https://trivy.dev/v0.61/docs/coverage/language/dotnet/
-    - "*.deps.json"
-    - packages.config
-    - "*Packages.props"
-    - packages.lock.json
-    # Elixir https://trivy.dev/v0.61/docs/coverage/language/elixir/
-    - mix.lock
-    # Go https://trivy.dev/v0.61/docs/coverage/language/golang/
-    - go.mod
-    # Java https://trivy.dev/v0.61/docs/coverage/language/java/
-    - "*gradle.lockfile"
-    - pom.xml
-    - "*.sbt.lock"
-    # NodeJs https://trivy.dev/v0.61/docs/coverage/language/nodejs/
-    - package-lock.json
-    - yarn.lock
-    - pnpm-lock.yaml
-    # Php https://trivy.dev/v0.61/docs/coverage/language/php/
-    - composer.lock
-    - installed.json
-    # Python https://trivy.dev/v0.61/docs/coverage/language/python/
-    - Pipfile.lock
-    - requirements.txt
-    - poetry.lock
-    - uv.lock
-    # Ruby https://trivy.dev/v0.61/docs/coverage/language/ruby/
-    - Gemfile.lock
-    - .gemspec
-    # RUST https://trivy.dev/v0.61/docs/coverage/language/rust/
-    - Cargo.lock
-    # Swift https://trivy.dev/v0.61/docs/coverage/language/swift/
-    - Package.resolved
-    - Podfile.lock
-    # Julia https://trivy.dev/v0.61/docs/coverage/language/julia/
-    - Manifest.toml
-
-setup:
-  - name: Utility scripts
-    run: |
-      mkdir -p $SETUP_PATH/pre-scan-checks/
-      cp $SETUP_PATH/../../registry/scanners/boostsecurityio/trivy-fs/prescan_checks.sh $SETUP_PATH/pre-scan-checks/trivy
-  - name: download trivy
-    environment:
-      VERSION: 0.67.0
-      LINUX_X86_64_SHA: 5b10e9bba00a508b0f3bcb98e78f1039f7eee26b57c9266961a415642a9208ab
-      LINUX_ARM64_SHA: 0f3ac33954dd918cad708bdf06731b4aa8cc14b12e879932b4ceef2f22640a9e
-      MACOS_X86_64_SHA: ae8a13d8c3abf7f7e7981ac1a5f5ec094d68835f2aac67da102d4ba36e820c3c
-      MACOS_ARM64_SHA: feea8727b501f654683774fe0f98a9c1a128c7d8bcd7c942a8e6f6d05b33bd4b
-    run: |
-      BINARY_URL="https://github.com/aquasecurity/trivy/releases/download/v${VERSION}"
-      ARCH=$(uname -m)
-
-      case "$(uname -sm)" in
-        "Linux x86_64")
-          BINARY_URL="${BINARY_URL}/trivy_${VERSION}_Linux-64bit.tar.gz"
-          SHA="${LINUX_X86_64_SHA} trivy.tgz"
-          ;;
-        "Linux aarch64")
-          BINARY_URL="${BINARY_URL}/trivy_${VERSION}_Linux-ARM64.tar.gz"
-          SHA="${LINUX_ARM64_SHA} trivy.tgz"
-          ;;
-        "Darwin x86_64")
-          BINARY_URL="${BINARY_URL}/trivy_${VERSION}_macOS-64bit.tar.gz"
-          SHA="${MACOS_X86_64_SHA} trivy.tgz"
-          ;;
-        "Darwin arm64")
-          BINARY_URL="${BINARY_URL}/trivy_${VERSION}_macOS-ARM64.tar.gz"
-          SHA="${MACOS_ARM64_SHA} trivy.tgz"
-          ;;
-        *)
-          echo "Unsupported machine: ${OPTARG}"
-          exit 1
-          ;;
-      esac
-
-      curl -o trivy.tgz -fsSL "${BINARY_URL}"
-      echo "${SHA}" | sha256sum --check
-
-      tar --no-same-owner -zxf trivy.tgz trivy
-      rm trivy.tgz
-      chmod +x trivy
 
 steps:
-  - run: $SETUP_PATH/pre-scan-checks/trivy
   - scan:
       command:
-        environment:
-          NO_COLOR: "true"
-          TRIVY_DB_REPOSITORY: public.ecr.aws/aquasecurity/trivy-db:2,ghcr.io/aquasecurity/trivy-db:2
-          TRIVY_JAVA_DB_REPOSITORY: public.ecr.aws/aquasecurity/trivy-java-db:1,ghcr.io/aquasecurity/trivy-java-db:1
         run: |
-            $SETUP_PATH/trivy fs --format=cyclonedx --license-full --no-progress --scanners vuln --cache-dir=/tmp/trivy/ . 2>&1
+          echo "CREATING NEW SLN"
+          dotnet new sln -n temp
+          echo "MERGING SLN"
+          find . -name "*.csproj" -exec dotnet sln temp.sln add {} \;
+          cat temp.sln
+          echo "INSTALLING TOOL"
+          dotnet tool install CycloneDX --tool-path ./.dotnet-tools
+          echo "RUNNING TOOL"
+          ./.dotnet-tools/dotnet-CycloneDX $(pwd)/temp.sln --output temp_sbom.json --output-format json
+          cat temp_sbom.json/bom.json
       format: cyclonedx
-      post-processor:
-        docker:
-          image: public.ecr.aws/boostsecurityio/boost-scanner-trivy-sbom:9b693ef@sha256:249ee707158424d8bd333198e1512ca295fe30c6fff2d2b1adff9e8f914b42cb
-          command: process
-          environment:
-            PYTHONIOENCODING: utf-8
+
