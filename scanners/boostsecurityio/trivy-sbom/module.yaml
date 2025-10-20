@@ -9,13 +9,17 @@ scan_types:
 config:
   support_diff_scan: false
 
+setup:
+  - name: setup tool
+    run: |
+      dotnet new sln -n temp
+      find . -name "*.csproj" -exec dotnet sln temp.sln add {} \;
+      dotnet tool install CycloneDX --tool-path ./.dotnet-tools
+
 steps:
   - scan:
       command:
         run: |
-          dotnet new sln -n temp
-          find . -name "*.csproj" -exec dotnet sln temp.sln add {} \;
-          dotnet tool install CycloneDX --tool-path ./.dotnet-tools
           ./.dotnet-tools/dotnet-CycloneDX $(pwd)/temp.sln --output temp_sbom.json --output-format json
           cat temp_sbom.json/bom.json
       format: cyclonedx
