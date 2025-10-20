@@ -23,6 +23,6 @@ steps:
           echo "INSTALLING TOOL"
           dotnet tool install CycloneDX --tool-path ./.dotnet-tools
           echo "RUNNING TOOL"
-          ./.dotnet-tools/dotnet-CycloneDX $(pwd)/temp.sln --output temp_sbom.json --output-format json
+          ./.dotnet-tools/dotnet-CycloneDX $(pwd)/temp.sln --output-format json --output -
           cat temp_sbom.json
       format: sarif
