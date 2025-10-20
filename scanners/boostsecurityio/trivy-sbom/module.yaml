@@ -13,14 +13,9 @@ steps:
   - scan:
       command:
         run: |
-          echo "CREATING NEW SLN"
           dotnet new sln -n temp
-          echo "MERGING SLN"
           find . -name "*.csproj" -exec dotnet sln temp.sln add {} \;
-          cat temp.sln
-          echo "INSTALLING TOOL"
           dotnet tool install CycloneDX --tool-path ./.dotnet-tools
-          echo "RUNNING TOOL"
           ./.dotnet-tools/dotnet-CycloneDX $(pwd)/temp.sln --output temp_sbom.json --output-format json
           cat temp_sbom.json/bom.json
       format: cyclonedx
