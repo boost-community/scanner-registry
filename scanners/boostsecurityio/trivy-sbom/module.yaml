@@ -9,6 +9,15 @@ scan_types:
 config:
   support_diff_scan: false
 
+setup:
+  - name: Verify dotnet installed
+    run: |
+      if ! command -v dotnet &> /dev/null
+      then
+        echo "dotnet is not installed, it is required to run this scanner."
+        exit 1
+      fi
+
 steps:
   - scan:
       command:
