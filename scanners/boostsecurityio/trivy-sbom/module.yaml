@@ -12,9 +12,7 @@ config:
 setup:
   - name: Verify dotnet installed
     run: |
-      #!/usr/bin/env bash
-      set -e
-      if ! command -v dotnet &> /dev/null
+      if ! which -v dotnet &> /dev/null
       then
         echo "dotnet is not installed, the scanner cannot run."
         exit 1
