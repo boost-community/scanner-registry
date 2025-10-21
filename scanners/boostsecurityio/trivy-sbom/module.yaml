@@ -18,6 +18,14 @@ setup:
         exit 1
       fi
       dotnet tool install CycloneDX --version 5.5.0 --tool-path $SETUP_PATH/scan-tools/.dotnet-tools
+      if [ $? -ne 0 ]; then
+        echo "Failed to install CycloneDX"
+        exit 1
+      fi
+      if ! "$SETUP_PATH/scan-tools/.dotnet-tools/dotnet-CycloneDX" --version >/dev/null 2>&1; then
+        echo "CycloneDX did not install or run correctly"
+        exit 1
+      fi
 
 steps:
   - scan:
