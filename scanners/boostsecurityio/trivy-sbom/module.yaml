@@ -16,6 +16,7 @@ setup:
         echo "dotnet is not installed, the scanner cannot run."
         exit 1
       fi
+      dotnet tool install CycloneDX --tool-path ./.dotnet-tools > /dev/null 2>&1
 
 steps:
   - scan:
@@ -23,7 +24,6 @@ steps:
         run: |
           dotnet new sln -n temp > /dev/null 2>&1
           find . -name "*.csproj" -exec dotnet sln temp.sln add {} \; > /dev/null 2>&1
-          dotnet tool install CycloneDX --tool-path ./.dotnet-tools > /dev/null 2>&1
           ./.dotnet-tools/dotnet-CycloneDX $(pwd)/temp.sln --output temp_sbom.json --output-format json > /dev/null 2>&1
           cat temp_sbom.json/bom.json
       format: cyclonedx
