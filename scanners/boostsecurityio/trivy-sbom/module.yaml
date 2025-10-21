@@ -13,11 +13,11 @@ setup:
   - name: Verify dotnet installed
     run: |
       mkdir -p $SETUP_PATH/scan-tools
-      if ! dotnet --version >/dev/null 2>&1; then
+      if ! dotnet --version ; then
         echo "dotnet is not installed, the scanner cannot run."
         exit 1
       fi
-      dotnet tool install CycloneDX --tool-path $SETUP_PATH/scan-tools/.dotnet-tools > /dev/null 2>&1
+      dotnet tool install CycloneDX --tool-path $SETUP_PATH/scan-tools/.dotnet-tools
 
 steps:
   - scan:
