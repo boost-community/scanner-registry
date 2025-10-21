@@ -12,7 +12,7 @@ config:
 setup:
   - name: Verify dotnet installed
     run: |
-      if ! which -v dotnet &> /dev/null
+      if ! dotnet --version >/dev/null 2>&1; then
       then
         echo "dotnet is not installed, the scanner cannot run."
         exit 1
