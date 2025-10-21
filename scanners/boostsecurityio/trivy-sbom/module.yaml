@@ -17,7 +17,7 @@ setup:
         echo "dotnet is not installed, the scanner cannot run."
         exit 1
       fi
-      dotnet tool install CycloneDX --tool-path $SETUP_PATH/scan-tools/.dotnet-tools
+      dotnet tool install CycloneDX --version 5.5.0 --tool-path $SETUP_PATH/scan-tools/.dotnet-tools
 
 steps:
   - scan:
