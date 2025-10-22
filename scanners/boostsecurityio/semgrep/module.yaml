@@ -4,25 +4,44 @@ id: boostsecurityio/semgrep
 name: Semgrep
 namespace: boostsecurityio/semgrep
 scan_types:
-  - sbom
+  - sast
 
 config:
-  support_diff_scan: false
+  support_diff_scan: true
   include_files:
   - .semgrep/*
+
+setup:
+  - name: Validate rules
+    environment:
+      SEMGREP_RULES: ${SEMGREP_RULES:-https://assets.build.boostsecurity.io/semgrep-rules/stable/all-sast-rules.yml}
+    run: |
+      echo "SEMGREP_RULES set to: '$SEMGREP_RULES'"
+      for rule in $SEMGREP_RULES; do
+        case "$rule" in
+          .semgrep/*|http://*|https://*)
+            # valid rule token; do nothing
+            ;;
+          *)
+            echo "Semgrep Community Rules cannot be used. Provide a URL or relative path to rules file or leave blank for Boost curated rules."
+            exit 1
+            ;;
+        esac
+      done
 
 steps:
   - scan:
       command:
-        run: |
-          echo "CREATING NEW SLN"
-          dotnet new sln -n temp
-          echo "MERGING SLN"
-          find . -name "*.csproj" -exec dotnet sln temp.sln add {} \;
-          cat temp.sln
-          echo "INSTALLING TOOL"
-          dotnet tool install CycloneDX --tool-path ./.dotnet-tools
-          echo "RUNNING TOOL"
-          ./.dotnet-tools/dotnet-CycloneDX $(pwd)/temp.sln --output temp_sbom.json --output-format json
-          cat temp_sbom.json/bom.json
-      format: cyclonedx
+        docker:
+          image: returntocorp/semgrep:1.139.0@sha256:e1e0cde346c758f755e1bd28fd0ea43cde9d523b59a040611a6bdde2f84bb3dd
+          command: semgrep scan --oss-only --sarif --quiet --disable-version-check --metrics=off --no-git-ignore .
+          workdir: /src
+          environment:
+            XDG_CONFIG_HOME: /tmp
+            HOME: /tmp
+            SEMGREP_RULES: ${SEMGREP_RULES:-https://assets.build.boostsecurity.io/semgrep-rules/stable/all-sast-rules.yml}
+      format: sarif
+      post-processor:
+        docker:
+          image: public.ecr.aws/boostsecurityio/boost-scanner-semgrep:2e1c86f@sha256:947f8cf38e8bfa8da0826e389e86c77f761a12106d1d9a39c0ea911dc2dce301
+          command: process
