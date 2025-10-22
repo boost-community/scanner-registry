@@ -39,6 +39,13 @@ steps:
   - scan:
       command:
         run: |
+          if [ ! -f "Directory.Packages.props" ]; then
+            cat > Directory.Packages.props <<'EOF'
+          <Project>
+            <ItemGroup></ItemGroup>
+          </Project>
+          EOF
+          fi
           dotnet new sln -n temp > /dev/null 2>&1
           find . -name "*.csproj" -print0 | xargs -0 dotnet sln temp.sln add >/dev/null 2>&1
           $SETUP_PATH/scan-tools/.dotnet-tools/dotnet-CycloneDX $(pwd)/temp.sln --output temp_sbom.json --output-format json > /dev/null 2>&1
