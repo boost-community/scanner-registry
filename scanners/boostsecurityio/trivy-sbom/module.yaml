@@ -49,9 +49,9 @@ steps:
           else
             RESTORE_FLAG=""
           fi
-          dotnet new sln -n temp 
-          find . -name "*.csproj" -print0 | xargs -0 dotnet sln temp.sln add 
-          $SETUP_PATH/scan-tools/.dotnet-tools/dotnet-CycloneDX $(pwd)/temp.sln $RESTORE_FLAG --output temp_sbom.json --output-format json 
+          dotnet new sln -n temp > /dev/null 2>&1
+          find . -name "*.csproj" -print0 | xargs -0 dotnet sln temp.sln add > /dev/null 2>&1
+          $SETUP_PATH/scan-tools/.dotnet-tools/dotnet-CycloneDX $(pwd)/temp.sln $RESTORE_FLAG --output temp_sbom.json --output-format json > /dev/null 2>&1
           cat temp_sbom.json/bom.json
       format: cyclonedx
 
