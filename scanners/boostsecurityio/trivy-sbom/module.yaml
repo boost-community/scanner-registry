@@ -45,7 +45,7 @@ steps:
             <ItemGroup></ItemGroup>
           </Project>
           EOF
-            RESTORE_FLAG="--no-restore"
+            RESTORE_FLAG="--disable-package-restore"
           else
             RESTORE_FLAG=""
           fi
