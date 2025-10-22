@@ -26,6 +26,14 @@ setup:
         echo "CycloneDX did not install or run correctly"
         exit 1
       fi
+      if [ ! -f "Directory.Packages.props" ]; then
+        echo "No Directory.Packages.props found — creating placeholder"
+        cat > Directory.Packages.props <<'EOF'
+      <Project>
+        <ItemGroup></ItemGroup>
+      </Project>
+      EOF
+      fi
 
 steps:
   - scan:
