@@ -1,0 +1,7 @@
+version: "1.0"
+tests:
+  - name: "hounddog-test-healthcare"
+    type: "source-code"
+    source:
+      url: "https://github.com/hounddogai/hounddog-test-healthcare-app.git"
+      ref: "main"
