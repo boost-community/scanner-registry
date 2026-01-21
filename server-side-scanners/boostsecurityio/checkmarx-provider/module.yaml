@@ -1,5 +1,0 @@
-name: Checkmarx Provider
-namespace: boostsecurityio/checkmarx-provider
-scan_types:
-  - sast
-  - iac
