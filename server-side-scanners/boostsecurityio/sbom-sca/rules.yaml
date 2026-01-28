@@ -33,3 +33,27 @@ rules:
     pretty_name: The Package Reached End of Life (EOL).
     ref: https://docs.boostsecurity.io/rules/index.html
     recommended: true
+
+  low-maturity-package:
+    categories:
+      - ALL
+      - boost-baseline
+      - use-of-forbidden-package
+    description: The project uses a package with maturity of less than 7 days
+    name: low-maturity-package
+    group: package-violations
+    pretty_name: Project with Low Maturity Package
+    ref: https://docs.boostsecurity.io/rules/index.html
+    recommended: true
+
+  typosquat-package:
+    categories:
+      - ALL
+      - boost-baseline
+      - use-of-forbidden-package
+    description: The project uses a package that seems to be a typosquat
+    name: typosquat-package
+    group: package-violations
+    pretty_name: Typosquat Package
+    ref: https://docs.boostsecurity.io/rules/index.html
+    recommended: true

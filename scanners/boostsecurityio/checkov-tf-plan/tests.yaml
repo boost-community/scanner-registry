@@ -1,11 +1,31 @@
 version: "1.0"
 tests:
-  - name: "boost sandbox"
+  - name: "aws-security-violations"
     type: "source-code"
     source:
-      url: "https://github.com/boost-sandbox/checkov-tf-plan-testing"
+      url: "https://github.com/boost-sandbox/checkov-tf-plan-testing.git"
       ref: "main"
     scan_paths:
       - "aws-security-violations"
+    env:
+      BOOST_TF_TAGS_POLICY: '{"version":"v1.0.0","enforcement_policy":"lax","supported_resources":["aws_s3_bucket"],"remediation_message":"For more information, please check our wiki...","required_tags":["Environment","Team"],"allowed_tag_values":{"Environment":["production"],"Team":["security"]}}'
+
+  - name: "aws-compliant"
+    type: "source-code"
+    source:
+      url: "https://github.com/boost-sandbox/checkov-tf-plan-testing.git"
+      ref: "main"
+    scan_paths:
+      - "aws-compliant"
+    env:
+      BOOST_TF_TAGS_POLICY: '{"version":"v1.0.0","enforcement_policy":"lax","supported_resources":["aws_s3_bucket"],"remediation_message":"For more information, please check our wiki...","required_tags":["Environment","Team"],"allowed_tag_values":{"Environment":["production"],"Team":["security"]}}'
+
+  - name: "gcp-storage"
+    type: "source-code"
+    source:
+      url: "https://github.com/boost-sandbox/checkov-tf-plan-testing.git"
+      ref: "main"
+    scan_paths:
+      - "gcp-storage"
     env:
       BOOST_TF_TAGS_POLICY: '{"version":"v1.0.0","enforcement_policy":"lax","supported_resources":["aws_s3_bucket"],"remediation_message":"For more information, please check our wiki...","required_tags":["Environment","Team"],"allowed_tag_values":{"Environment":["production"],"Team":["security"]}}'

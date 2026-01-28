@@ -55,7 +55,7 @@ setup:
   - name: Utility scripts
     run: |
       mkdir -p $SETUP_PATH/pre-scan-checks/
-      cp $SETUP_PATH/../../registry/scanners/boostsecurityio/trivy-fs/prescan_checks.sh $SETUP_PATH/pre-scan-checks/trivy
+      cp $REGISTRY_PATH/scanners/boostsecurityio/trivy-fs/prescan_checks.sh $SETUP_PATH/pre-scan-checks/trivy
   - name: download trivy
     environment:
       VERSION: 0.67.2

@@ -11,7 +11,7 @@ setup:
   - name: Utility scripts
     run: |
       mkdir -p $SETUP_PATH/pre-scan-checks/
-      cp $SETUP_PATH/../../registry/scanners/boostsecurityio/bundler-audit/prescan_checks.sh $SETUP_PATH/pre-scan-checks/bundler
+      cp $REGISTRY_MODULE_PATH/prescan_checks.sh $SETUP_PATH/pre-scan-checks/bundler
 
 config:
   support_diff_scan: true

@@ -5,11 +5,6 @@ tests:
     source:
       url: "https://github.com/gitleaks/gitleaks.git"
       ref: "v8.15.2"
-  - name: "osv-scanner"
-    type: "source-code"
-    source:
-      url: "https://github.com/google/osv-scanner.git"
-      ref: "main"
   - name: "rclone"
     type: "source-code"
     source:

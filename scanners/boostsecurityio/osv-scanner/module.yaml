@@ -56,7 +56,7 @@ setup:
   - name: Utility scripts
     run: |
       mkdir -p $SETUP_PATH/pre-scan-checks/
-      cp $SETUP_PATH/../../registry/scanners/boostsecurityio/osv-scanner/prescan_checks.sh $SETUP_PATH/pre-scan-checks/osv-scanner
+      cp $REGISTRY_MODULE_PATH/prescan_checks.sh $SETUP_PATH/pre-scan-checks/osv-scanner
 
 steps:
 - run: $SETUP_PATH/pre-scan-checks/osv-scanner

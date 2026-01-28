@@ -1,0 +1,7 @@
+version: "1.0"
+tests:
+  - name: "NodeGoat"
+    type: "source-code"
+    source:
+      url: "https://github.com/OWASP/NodeGoat.git"
+      ref: "master"
