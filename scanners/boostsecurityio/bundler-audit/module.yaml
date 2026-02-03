@@ -24,7 +24,7 @@ steps:
   - scan:
       command:
         docker:
-          image: ruby:3.1.2@sha256:933ec5cdaeae085292f00f69fd923f680f9d5a82959db74687cbbbd403b85a19
+          image: 289082777815.dkr.ecr.us-east-2.amazonaws.com/docker/ruby:3.1.2@sha256:933ec5cdaeae085292f00f69fd923f680f9d5a82959db74687cbbbd403b85a19
           command: |
             bash -c 'touch Gemfile &&
                      gem install --silent bundler-audit -v "0.9.1" &&
