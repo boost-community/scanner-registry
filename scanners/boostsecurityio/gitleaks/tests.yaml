@@ -4,4 +4,4 @@ tests:
     type: "source-code"
     source:
       url: "https://github.com/cloud-gov/caulking.git"
-      ref: "main"
+      ref: "THISISGARBAGE"
