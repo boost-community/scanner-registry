@@ -23,7 +23,7 @@ steps:
   - scan:
       command:
         docker:
-          image: node:22-alpine3.21@sha256:ad1aedbcc1b0575074a91ac146d6956476c1f9985994810e4ee02efd932a68fd
+          image: 289082777815.dkr.ecr.us-east-2.amazonaws.com/docker/node:22-alpine3.21@sha256:ad1aedbcc1b0575074a91ac146d6956476c1f9985994810e4ee02efd932a68fd
           command: |
             sh -c 'npm audit --json $NPM_AUDIT_ARGS || true'
           workdir: /src
