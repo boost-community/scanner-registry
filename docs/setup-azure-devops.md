@@ -29,7 +29,7 @@
 
 ---
 
-## 3. Add Federated Credential for GitHub Actions
+## 3. Add Federated Credential for GitHub Actions pull request from the same repository
 
 1. In the app registration, go to:
    **Certificates & secrets → Federated credentials → Add credential**
@@ -52,7 +52,31 @@
 
 ---
 
-## 4. Grant Permissions in Azure DevOps
+## 4. Add Federated Credential for GitHub Actions pull request from forks
+
+1. In the app registration, go to:
+   **Certificates & secrets → Federated credentials → Add credential**
+
+2. Select **GitHub Actions deploying Azure resources**
+
+3. Configure the federated credential:
+   Need to be done for both
+   - boostsecurityio/dev-registry
+   - boost-community/scanner-registry
+   
+   | Field            | Value                          |
+   |------------------|--------------------------------|
+   | **Organization** | <org name>                     |
+   | **Repository**   | <repo name>                    |
+   | **Entity type**  | Environement                   |
+   | **Value**        | scan-test                      |
+   | **Name**         | `github-actions-<env>-pr-fork` |
+
+4. Click **Add**
+
+---
+
+## 5. Grant Permissions in Azure DevOps
 
 1. Navigate to your Azure DevOps organization:
    **Organization Settings → Users → Add users**
@@ -71,7 +95,7 @@
 
 ---
 
-## 5. Configure Secrets on Scanner Registry Repository
+## 6. Configure Secrets on Scanner Registry Repository
 
 Navigate to the scanner registry repository (GitHub):
 **Settings → Secrets and variables → Actions → New repository secret**
@@ -84,7 +108,7 @@ Navigate to the scanner registry repository (GitHub):
 
 ---
 
-## 6. Usage in GitHub Actions Workflow
+## 7. Usage in GitHub Actions Workflow
 
 ```yaml
 permissions:
@@ -117,7 +141,7 @@ jobs:
 
 ---
 
-## 7. Token Details
+## 8. Token Details
 
 | Property             | Value                                |
 |----------------------|--------------------------------------|
