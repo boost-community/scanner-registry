@@ -9,6 +9,7 @@ buildscript-gradle.lockfile
 gradle.lockfile
 verification-metadata.xml
 pom.xml
+bun.lock
 package-lock.json
 pnpm-lock.yaml
 yarn.lock
@@ -21,8 +22,10 @@ Pipfile.lock
 poetry.lock
 requirements.txt
 pdm.lock
+pylock.toml
 uv.lock
 renv.lock
 Gemfile.lock
+gems.locked
 Cargo.lock
 osv-scanner.json

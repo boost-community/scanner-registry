@@ -29,6 +29,7 @@ config:
     - verification-metadata.xml
     - pom.xml
     # Javascript
+    - bun.lock
     - package-lock.json
     - pnpm-lock.yaml
     - yarn.lock
@@ -44,11 +45,13 @@ config:
     - poetry.lock
     - requirements.txt
     - pdm.lock
+    - pylock.toml
     - uv.lock
     # R
     - renv.lock
     # Ruby
     - Gemfile.lock
+    - gems.locked
     # Rust
     - Cargo.lock
     # Custom lockfile http://google.github.io/osv-scanner/supported-languages-and-lockfiles/#custom-lockfiles
