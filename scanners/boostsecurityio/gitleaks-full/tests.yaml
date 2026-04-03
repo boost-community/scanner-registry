@@ -5,3 +5,8 @@ tests:
     source:
       url: "https://github.com/cloud-gov/caulking.git"
       ref: "main"
+  - name: "boost-sandbox/secrets-custom"
+    type: "source-code"
+    source:
+      url: "https://github.com/boost-sandbox/secrets-custom.git"
+      ref: "main"

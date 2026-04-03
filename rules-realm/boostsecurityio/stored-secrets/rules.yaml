@@ -18,6 +18,44 @@ rules:
     - owasp-top-10
     recommended: true
 
+  1password-secret-key:
+    name: 1password-secret-key
+    pretty_name: Exposed Secret - 1Password Secret Key
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  1password-service-account-token:
+    name: 1password-service-account-token
+    pretty_name: Exposed Secret - 1Password Service Account Token
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
   adafruit-api-key:
     name: adafruit-api-key
     pretty_name: Exposed Secret - Adafruit API Key
@@ -178,6 +216,82 @@ rules:
     - owasp-top-10
     recommended: true
 
+  anthropic-admin-api-key:
+    name: anthropic-admin-api-key
+    pretty_name: Exposed Secret - Anthropic Admin API Key
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  anthropic-api-key:
+    name: anthropic-api-key
+    pretty_name: Exposed Secret - Anthropic API Key
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  artifactory-api-key:
+    name: artifactory-api-key
+    pretty_name: Exposed Secret - Artifactory API Key
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  artifactory-reference-token:
+    name: artifactory-reference-token
+    pretty_name: Exposed Secret - Artifactory Reference Token
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
   asana-client-id:
     name: asana-client-id
     pretty_name: Exposed Secret - Asana Client Id
@@ -266,6 +380,25 @@ rules:
     description: The repository exposes sensitive information (AWS Access Token)
       to an actor that is not explicitly authorized to have access to that information.
 
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  azure-ad-client-secret:
+    name: azure-ad-client-secret
+    pretty_name: Exposed Secret - Azure AD Client Secret
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
     categories:
     - ALL
     - stored-secrets
@@ -378,6 +511,44 @@ rules:
     - owasp-top-10
     recommended: true
 
+  cisco-meraki-api-key:
+    name: cisco-meraki-api-key
+    pretty_name: Exposed Secret - Cisco Meraki API Key
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  clickhouse-cloud-api-secret-key:
+    name: clickhouse-cloud-api-secret-key
+    pretty_name: Exposed Secret - Clickhouse Cloud API Secret Key
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
   clojars-api-token:
     name: clojars-api-token
     pretty_name: Exposed Secret - Clojars API Token
@@ -478,6 +649,25 @@ rules:
     - owasp-top-10
     recommended: true
 
+  cohere-api-token:
+    name: cohere-api-token
+    pretty_name: Exposed Secret - Cohere API Token
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
   coinbase-access-token:
     name: coinbase-access-token
     pretty_name: Exposed Secret - Coinbase Access Token
@@ -546,6 +736,44 @@ rules:
     description: The repository exposes sensitive information (Contentful Delivery API Token)
       to an actor that is not explicitly authorized to have access to that information.
 
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  curl-auth-header:
+    name: curl-auth-header
+    pretty_name: Exposed Secret - cURL Auth Header
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  curl-auth-user:
+    name: curl-auth-user
+    pretty_name: Exposed Secret - cURL Auth User
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
     categories:
     - ALL
     - stored-secrets
@@ -1158,6 +1386,25 @@ rules:
     - owasp-top-10
     recommended: true
 
+  flyio-access-token:
+    name: flyio-access-token
+    pretty_name: Exposed Secret - Fly.io Access Token
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
   frameio-api-token:
     name: frameio-api-token
     pretty_name: Exposed Secret - Frame.io API Token
@@ -1166,6 +1413,25 @@ rules:
     description: The repository exposes sensitive information (Frame.io API Token)
       to an actor that is not explicitly authorized to have access to that information.
 
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  freemius-secret-key:
+    name: freemius-secret-key
+    pretty_name: Exposed Secret - Freemius Secret Key
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
     categories:
     - ALL
     - stored-secrets
@@ -1338,6 +1604,139 @@ rules:
     - owasp-top-10
     recommended: true
 
+  gitlab-cicd-job-token:
+    name: gitlab-cicd-job-token
+    pretty_name: Exposed Secret - GitLab CI/CD Job Token
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  gitlab-deploy-token:
+    name: gitlab-deploy-token
+    pretty_name: Exposed Secret - GitLab Deploy Token
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  gitlab-feature-flag-client-token:
+    name: gitlab-feature-flag-client-token
+    pretty_name: Exposed Secret - GitLab Feature Flag Client Token
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  gitlab-feed-token:
+    name: gitlab-feed-token
+    pretty_name: Exposed Secret - GitLab Feed Token
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  gitlab-incoming-mail-token:
+    name: gitlab-incoming-mail-token
+    pretty_name: Exposed Secret - GitLab Incoming Mail Token
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  gitlab-kubernetes-agent-token:
+    name: gitlab-kubernetes-agent-token
+    pretty_name: Exposed Secret - GitLab Kubernetes Agent Token
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  gitlab-oauth-app-secret:
+    name: gitlab-oauth-app-secret
+    pretty_name: Exposed Secret - GitLab OAuth App Secret
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
   gitlab-pat:
     name: gitlab-pat
     pretty_name: Exposed Secret - GitLab Personal Access Token
@@ -1346,6 +1745,25 @@ rules:
     description: The repository exposes sensitive information (GitLab Personal Access Token)
       to an actor that is not explicitly authorized to have access to that information.
 
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  gitlab-pat-routable:
+    name: gitlab-pat-routable
+    pretty_name: Exposed Secret - GitLab Personal Access Token (routable)
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
     categories:
     - ALL
     - stored-secrets
@@ -1386,6 +1804,82 @@ rules:
     description: The repository exposes sensitive information (GitLab Runner Token)
       to an actor that is not explicitly authorized to have access to that information.
 
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  gitlab-runner-authentication-token:
+    name: gitlab-runner-authentication-token
+    pretty_name: Exposed Secret - GitLab Runner Authentication Token
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  gitlab-runner-authentication-token-routable:
+    name: gitlab-runner-authentication-token-routable
+    pretty_name: Exposed Secret - GitLab Runner Authentication Token (routable)
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  gitlab-scim-token:
+    name: gitlab-scim-token
+    pretty_name: Exposed Secret - GitLab SCIM Token
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  gitlab-session-cookie:
+    name: gitlab-session-cookie
+    pretty_name: Exposed Secret - GitLab Session Cookie
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
     categories:
     - ALL
     - stored-secrets
@@ -1566,6 +2060,25 @@ rules:
     description: The repository exposes sensitive information (Heroku API Key)
       to an actor that is not explicitly authorized to have access to that information.
 
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  heroku-api-key-v2:
+    name: heroku-api-key-v2
+    pretty_name: Exposed Secret - Heroku API Key (v2)
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
     categories:
     - ALL
     - stored-secrets
@@ -1786,6 +2299,25 @@ rules:
     description: The repository exposes sensitive information (Kraken Access Token)
       to an actor that is not explicitly authorized to have access to that information.
 
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  kubernetes-secret-yaml:
+    name: kubernetes-secret-yaml
+    pretty_name: Exposed Secret - Kubernetes Secret YAML
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
     categories:
     - ALL
     - stored-secrets
@@ -2098,6 +2630,25 @@ rules:
     - owasp-top-10
     recommended: true
 
+  maxmind-license-key:
+    name: maxmind-license-key
+    pretty_name: Exposed Secret - MaxMind License Key
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
   messagebird-api-token:
     name: messagebird-api-token
     pretty_name: Exposed Secret - MessageBird API Token
@@ -2258,6 +2809,25 @@ rules:
     - owasp-top-10
     recommended: true
 
+  notion-api-token:
+    name: notion-api-token
+    pretty_name: Exposed Secret - Notion API Token
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
   npm-access-token:
     name: npm-access-token
     pretty_name: Exposed Secret - Npm Access Token
@@ -2278,6 +2848,25 @@ rules:
     - owasp-top-10
     recommended: true
 
+  nuget-config-password:
+    name: nuget-config-password
+    pretty_name: Exposed Secret - NuGet Config Password
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
   nytimes-access-token:
     name: nytimes-access-token
     pretty_name: Exposed Secret - The New York Times Access Token
@@ -2286,6 +2875,25 @@ rules:
     description: The repository exposes sensitive information (The New York Times Access Token)
       to an actor that is not explicitly authorized to have access to that information.
 
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  octopus-deploy-api-key:
+    name: octopus-deploy-api-key
+    pretty_name: Exposed Secret - Octopus Deploy API Key
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
     categories:
     - ALL
     - stored-secrets
@@ -2326,6 +2934,63 @@ rules:
     description: The repository exposes sensitive information (OpenAI API Key)
       to an actor that is not explicitly authorized to have access to that information.
 
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  openshift-user-token:
+    name: openshift-user-token
+    pretty_name: Exposed Secret - OpenShift User Token
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  perplexity-api-key:
+    name: perplexity-api-key
+    pretty_name: Exposed Secret - Perplexity API Key
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  pkcs12-file:
+    name: pkcs12-file
+    pretty_name: Exposed Secret - PKCS # 12 (PFX) File
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
     categories:
     - ALL
     - stored-secrets
@@ -2506,6 +3171,25 @@ rules:
     description: The repository exposes sensitive information (Private Key)
       to an actor that is not explicitly authorized to have access to that information.
 
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  privateai-api-token:
+    name: privateai-api-token
+    pretty_name: Exposed Secret - Private AI API Token
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
     categories:
     - ALL
     - stored-secrets
@@ -2726,6 +3410,101 @@ rules:
     description: The repository exposes sensitive information (Sentry Access Token)
       to an actor that is not explicitly authorized to have access to that information.
 
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  sentry-org-token:
+    name: sentry-org-token
+    pretty_name: Exposed Secret - Sentry.io Organization Token
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  sentry-user-token:
+    name: sentry-user-token
+    pretty_name: Exposed Secret - Sentry.io User Token
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  settlemint-application-access-token:
+    name: settlemint-application-access-token
+    pretty_name: Exposed Secret - SettleMint Application Access Token
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  settlemint-personal-access-token:
+    name: settlemint-personal-access-token
+    pretty_name: Exposed Secret - SettleMint Personal Access Token
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  settlemint-service-access-token:
+    name: settlemint-service-access-token
+    pretty_name: Exposed Secret - SettleMint Service Access Token
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
     categories:
     - ALL
     - stored-secrets
@@ -3066,6 +3845,44 @@ rules:
     description: The repository exposes sensitive information (Snyk API Token)
       to an actor that is not explicitly authorized to have access to that information.
 
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  sonar-api-token:
+    name: sonar-api-token
+    pretty_name: Exposed Secret - SonarQube Cloud API Token
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    categories:
+    - ALL
+    - stored-secrets
+    - cwe-top-25
+    - boost-baseline
+    - boost-hardened
+    - cwe-200
+    - cwe-798
+    - cwe-522
+    - owasp-top-10
+    recommended: true
+
+  sourcegraph-access-token:
+    name: sourcegraph-access-token
+    pretty_name: Exposed Secret - Sourcegraph Access Token
+    group: stored-secrets
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
     categories:
     - ALL
     - stored-secrets
