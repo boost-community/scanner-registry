@@ -108,7 +108,7 @@ steps:
           --no-progress
           --scanners ${TRIVY_SCANNERS}
           --skip-version-check 
-          . 2>&1
+          .
       format: sarif
       post-processor:
         docker:
