@@ -1,0 +1,4 @@
+name: Levo
+namespace: boostsecurityio/levo
+scan_types:
+  - dast
