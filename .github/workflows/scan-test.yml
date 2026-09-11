@@ -40,12 +40,13 @@ jobs:
           echo "token=$token" >> $GITHUB_OUTPUT
           echo "::add-mask::$token"
       - name: Checkout scanner registry
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           # Checkout the pull request's code to read the new tests.yaml
           fetch-depth: 0  # Need full history to detect changes
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.sha }}
+          allow-unsafe-pr-checkout: true
       - name: Run Tests
         uses: boostsecurityio/scan-test-action@05297ee358226347a9f4989716ffeb7ba1dedc4f
         with:
@@ -86,12 +87,13 @@ jobs:
           echo "token=$token" >> $GITHUB_OUTPUT
           echo "::add-mask::$token"
       - name: Checkout scanner registry
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           # Checkout the pull request's code to read the new tests.yaml
           fetch-depth: 0  # Need full history to detect changes
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.sha }}
+          allow-unsafe-pr-checkout: true
       - name: Run Tests
         uses: boostsecurityio/scan-test-action@05297ee358226347a9f4989716ffeb7ba1dedc4f
         with:
@@ -129,12 +131,13 @@ jobs:
           owner: boostsecurityio
           repositories: scan-test-runner-gitbub-actions
       - name: Checkout scanner registry
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           # Checkout the pull request's code to read the new tests.yaml
           fetch-depth: 0  # Need full history to detect changes
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.sha }}
+          allow-unsafe-pr-checkout: true
       - name: Run Tests
         uses: boostsecurityio/scan-test-action@05297ee358226347a9f4989716ffeb7ba1dedc4f
         with:
@@ -165,12 +168,13 @@ jobs:
       (github.event_name == 'pull_request_target' && github.event.pull_request.head.repo.full_name != github.repository)
     steps:
       - name: Checkout scanner registry
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           # Checkout the pull request's code to read the new tests.yaml
           fetch-depth: 0  # Need full history to detect changes
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.sha }}
+          allow-unsafe-pr-checkout: true
       - name: Run Tests
         uses: boostsecurityio/scan-test-action@05297ee358226347a9f4989716ffeb7ba1dedc4f
         with:
