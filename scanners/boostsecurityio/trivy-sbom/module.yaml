@@ -102,6 +102,7 @@ steps:
           set +e
           LOG=$(mktemp)
           $SETUP_PATH/trivy fs ${TRIVY_ADDITIONAL_ARGS} --format=json \
+                               --debug \
                                --output=trivy-report.json \
                                --license-full \
                                --no-progress \
@@ -114,10 +115,16 @@ steps:
             $SETUP_PATH/trivy convert --quiet --format cyclonedx trivy-report.json 2>>"$LOG"
             ec=$?
           fi
+          # --debug is for trivy's failed-fetch records: keep those and the first DEBUG
+          # record (the post-processor's proof fetches were measured), drop other DEBUG.
+          # An indented line belongs to the record above it.
+          awk -F '\t' '!/^[ \t]/ { keep = $2 != "DEBUG" || !seen++ || /Failed to fetch/ } keep' \
+            "$LOG" >"$LOG.kept" && mv "$LOG.kept" "$LOG"
           # trivy's logs carry the "no language files" signal AND its fatal errors;
           # both readers consume a different stream, so emit the logs to each:
           cat "$LOG"      # stdout: the post-processor reads the "no language files" count here
           cat "$LOG" >&2  # stderr: the CLI's failure telemetry only reads stderr, so errors surface
+          rm -f "$LOG" "$LOG.kept"
           exit "$ec"
       format: cyclonedx
       post-processor:
