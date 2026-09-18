@@ -5,9 +5,9 @@
   <version>1.0.0</version>
   <dependencies>
     <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <version>3.14.0</version>
+      <groupId>io.boostsecurity.canary</groupId>
+      <artifactId>unpublished-dependency</artifactId>
+      <version>1.0.0</version>
     </dependency>
   </dependencies>
 </project>
