@@ -1,0 +1,30 @@
+name: Trivy Log Contract
+
+on:
+  pull_request:
+    paths:
+      - scanners/boostsecurityio/boost-sca/module.yaml
+      - scanners/boostsecurityio/trivy-fs/module.yaml
+      - scanners/boostsecurityio/trivy-sbom/module.yaml
+      - .github/trivy-log-contract/**
+      - .github/workflows/trivy-log-contract.yml
+
+permissions:
+  contents: read
+
+jobs:
+  canary:
+    name: Trivy Log Contract
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@128a63446a954579617e875aaab7d2978154e969 # v2.4.0
+        with:
+          egress-policy: audit
+
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Check the pinned trivy's log matches what the converters parse
+        run: .github/trivy-log-contract/run.sh
