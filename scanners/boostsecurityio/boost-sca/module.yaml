@@ -124,9 +124,21 @@ steps:
       format: cyclonedx
       post-processor:
         docker:
-          image: public.ecr.aws/boostsecurityio/boost-scanner-trivy-sbom:68831d5@sha256:2b7878a72c2d7e1720ef3a44ef0cdc865cd3f95dc42996c6dbb5232438e87eb8
+          image: public.ecr.aws/boostsecurityio/boost-scanner-trivy-sbom:8397e43@sha256:9e10985966c229deac734de6dda6064ec13a9851ce824d589ba9206c87c87e97
           command: process
           # not /app: srcdir is bind-mounted at workdir and the image lives under /app
           workdir: /scan
           environment:
             PYTHONIOENCODING: utf-8
+
+enrichment:
+  docker:
+    image: public.ecr.aws/boostsecurityio/boost-scanner-trivy-sbom:8397e43@sha256:9e10985966c229deac734de6dda6064ec13a9851ce824d589ba9206c87c87e97
+    command: reachability
+    # not /app: srcdir is bind-mounted at workdir and the image lives under /app
+    workdir: /scan
+    environment:
+      PYTHONIOENCODING: utf-8
+      BOOST_SCA_REACHABILITY: ${BOOST_SCA_REACHABILITY:-false}
+      BOOST_SCA_THREATRANK_URL: https://assets.build.boostsecurity.io/scanners/threatrank/threatrank-1.0.7/linux/amd64/threatrank.tar.gz
+      BOOST_SCA_THREATRANK_SHA256: 47e4fd65efec397d963c87e3313e46fad3601b46e65c16a11c8320d39040c5c8
