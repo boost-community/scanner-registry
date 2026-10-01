@@ -28,6 +28,7 @@ The module.yaml file defines the module behavior and its configuration. The file
   1. [Scanning Setup](#scanning-setup)
   2. [Scanning](#scan-with-container-image)
   3. [Post-Scanning](#scan-post-processing)
+  4. [Scan Enrichment](#scan-enrichment)
 
 ### Module Header
 ```yaml
@@ -158,6 +159,17 @@ steps:
     format: ...
     post-processor:
       run: $SETUP_PATH/<executable>
+```
+
+#### Scan Enrichment
+The optional enrichment section is a top-level key, next to `steps`. It runs once, after the scan and its post-processing, on the resulting document: the step reads the document on stdin and writes the enriched document to stdout. Like the post-processor, it accepts a `docker` or `run` step, or a list of them.
+```yaml
+enrichment:
+  docker:
+    image: <image>
+    command: <container command>
+    environment:
+      ENVVARIABLE: <value>
 ```
 
 ## Module Rules

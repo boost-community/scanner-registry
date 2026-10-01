@@ -1,0 +1,30 @@
+version: "1.0"
+tests:
+  - name: "gitleaks"  # GO
+    type: "source-code"
+    source:
+      url: "https://github.com/gitleaks/gitleaks.git"
+      ref: "v8.15.2"
+  - name: "rclone"  # GO
+    type: "source-code"
+    source:
+      url: "https://github.com/rclone/rclone.git"
+      ref: "v1.65.2"
+  - name: "kubeaudit"  # GO
+    type: "source-code"
+    source:
+      url: "https://github.com/Shopify/kubeaudit.git"
+      ref: "v0.18.0"
+  - name: "vaultwarden"  # RUST
+    type: "source-code"
+    source:
+      url: "https://github.com/dani-garcia/vaultwarden.git"
+      ref: "1.30.5"
+  - name: "pygoat-reachability"  # Python, reachability enrichment on
+    type: "source-code"
+    source:
+      url: "https://github.com/adeyosemanputra/pygoat.git"
+      ref: "v2.0.1"
+    timeout: "15m"
+    env:
+      BOOST_SCA_REACHABILITY: "true"
