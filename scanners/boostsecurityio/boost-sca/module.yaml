@@ -139,6 +139,6 @@ enrichment:
     workdir: /scan
     environment:
       PYTHONIOENCODING: utf-8
-      BOOST_SCA_REACHABILITY: ${BOOST_SCA_REACHABILITY:-false}
+      BOOST_SCA_REACHABILITY: ${BOOST_SCA_REACHABILITY:-true}
       BOOST_SCA_THREATRANK_URL: https://assets.build.boostsecurity.io/scanners/threatrank/threatrank-1.0.7/linux/amd64/threatrank.tar.gz
       BOOST_SCA_THREATRANK_SHA256: 47e4fd65efec397d963c87e3313e46fad3601b46e65c16a11c8320d39040c5c8

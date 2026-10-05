@@ -5,26 +5,32 @@ tests:
     source:
       url: "https://github.com/gitleaks/gitleaks.git"
       ref: "v8.15.2"
+    env:
+      BOOST_SCA_REACHABILITY: "false"
   - name: "rclone"  # GO
     type: "source-code"
     source:
       url: "https://github.com/rclone/rclone.git"
       ref: "v1.65.2"
+    env:
+      BOOST_SCA_REACHABILITY: "false"
   - name: "kubeaudit"  # GO
     type: "source-code"
     source:
       url: "https://github.com/Shopify/kubeaudit.git"
       ref: "v0.18.0"
+    env:
+      BOOST_SCA_REACHABILITY: "false"
   - name: "vaultwarden"  # RUST
     type: "source-code"
     source:
       url: "https://github.com/dani-garcia/vaultwarden.git"
       ref: "1.30.5"
+    env:
+      BOOST_SCA_REACHABILITY: "false"
   - name: "pygoat-reachability"  # Python, reachability enrichment on
     type: "source-code"
     source:
       url: "https://github.com/adeyosemanputra/pygoat.git"
       ref: "v2.0.1"
     timeout: "15m"
-    env:
-      BOOST_SCA_REACHABILITY: "true"
