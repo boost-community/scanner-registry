@@ -172,10 +172,10 @@ enrichment:
       ENVVARIABLE: <value>
 ```
 
-Enrichment steps, and only them, also accept `enable_on_diff_scan` (defaults to `true`). It applies only to diff scans — scans with a base ref, such as pull requests and pushes to non-default branches — and decides whether the step runs on them. It takes a boolean or an environment variable expression resolved at scan time; a value that cannot be resolved, or that does not resolve to `true` or `false`, runs the step with a warning. The boost-sca reachability step skips diff scans unless the pipeline opts in:
+Enrichment steps, and only them, also accept the boolean `enable_on_diff_scan` (defaults to `true`). Set to `false`, the step is skipped on diff scans — scans with a base ref, such as pull requests and pushes to non-default branches. The boost-sca reachability step never runs on diff scans:
 ```yaml
 enrichment:
-  enable_on_diff_scan: ${BOOST_SCA_REACHABILITY_DIFF_SCAN_ENABLED:-false}
+  enable_on_diff_scan: false
   docker:
     ...
 ```
