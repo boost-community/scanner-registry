@@ -172,6 +172,14 @@ enrichment:
       ENVVARIABLE: <value>
 ```
 
+Enrichment steps, and only them, also accept the boolean `enable_on_diff_scan` (defaults to `true`). Set to `false`, the step is skipped on diff scans — scans with a base ref, such as pull requests and pushes to non-default branches. The boost-sca reachability step never runs on diff scans:
+```yaml
+enrichment:
+  enable_on_diff_scan: false
+  docker:
+    ...
+```
+
 ## Module Rules
 Module rules are used to enrich the findings to ensure the policy processing per proper group or categories as well as the proper display of the description in the Boostsecurity platform. 
 

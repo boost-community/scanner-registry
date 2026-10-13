@@ -132,6 +132,7 @@ steps:
             PYTHONIOENCODING: utf-8
 
 enrichment:
+  enable_on_diff_scan: false
   docker:
     image: public.ecr.aws/boostsecurityio/boost-scanner-trivy-sbom:8397e43@sha256:9e10985966c229deac734de6dda6064ec13a9851ce824d589ba9206c87c87e97
     command: reachability
