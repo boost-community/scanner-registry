@@ -92,11 +92,15 @@ steps:
   - run: ls -laih $SETUP_PATH/
   - scan:
       command:
-        run: >
-          $SETUP_PATH/osv-scalibr -o
-          spdx23-json=result.spdx.json
-          --plugins=sbom,sourcecode,dotnet/csproj,java/archive
-          . &&
+        run: |
+          rc=0
+          $SETUP_PATH/osv-scalibr -o \
+            spdx23-json=result.spdx.json \
+            --plugins=sbom,sourcecode,dotnet/csproj,java/archive \
+            . > scan.log 2>&1 || rc=$?
+          if [ $rc -ne 0 ]; then
+            grep -q "Scan status: PARTIALLY_SUCCEEDED" scan.log && [ -s result.spdx.json ] || { cat scan.log >&2; exit $rc; }
+          fi
           cat result.spdx.json
       format: cyclonedx
       post-processor:
