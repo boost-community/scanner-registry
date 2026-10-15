@@ -92,12 +92,15 @@ steps:
   - run: ls -laih $SETUP_PATH/
   - scan:
       command:
-        run: >
+        run: |
           $SETUP_PATH/osv-scalibr -o
           spdx23-json=result.spdx.json
           --plugins=sbom,sourcecode,dotnet/csproj,java/archive
-          . &&
-          cat result.spdx.json
+          . 2>scan.log; rc=$?
+          if [ $rc -ne 0 ]; then
+            grep -q "Scan status: PARTIALLY_SUCCEEDED" scan.log && [ -s result.spdx.json ] || exit $rc
+          fi
+          cat result.spdx.json 2>&1
       format: cyclonedx
       post-processor:
         docker:
