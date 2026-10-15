@@ -105,21 +105,28 @@ steps:
           set +e
           LOG=$(mktemp)
           $SETUP_PATH/trivy fs ${TRIVY_ADDITIONAL_ARGS} \
+                               --debug \
                                --format json \
                                --no-progress \
                                --scanners ${TRIVY_SCANNERS} \
                                --skip-version-check \
                                . 2>"$LOG"
           ec=$?
+          # --debug is for trivy's failed-fetch records: keep those and the first DEBUG
+          # record (the post-processor's proof fetches were measured), drop other DEBUG.
+          # An indented line belongs to the record above it.
+          awk -F '\t' '!/^[ \t]/ { keep = $2 != "DEBUG" || !seen++ || /Failed to fetch/ } keep' \
+            "$LOG" >"$LOG.kept" && mv "$LOG.kept" "$LOG"
           # trivy's logs carry the "no language files" signal AND its fatal errors;
           # both readers consume a different stream, so emit the logs to each:
           cat "$LOG"      # stdout: the post-processor reads the "no language files" count here
           cat "$LOG" >&2  # stderr: the CLI's failure telemetry only reads stderr, so errors surface
+          rm -f "$LOG" "$LOG.kept"
           exit "$ec"
       format: sarif
       post-processor:
         docker:
-          image: public.ecr.aws/boostsecurityio/boost-scanner-trivy:0269f97@sha256:9b9f2900aef1adfe2cf54a8a0ecc912bdb24c23c94970430b636f92075af586c
+          image: public.ecr.aws/boostsecurityio/boost-scanner-trivy:dfef1e1@sha256:171cfb172f386e60ed3c49eb563a18dd0681191aba46ce18407889f38de98c34
           command: process
           environment:
             PYTHONIOENCODING: utf-8
