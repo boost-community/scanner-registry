@@ -68,7 +68,7 @@ steps:
       format: cyclonedx
       post-processor:
         docker:
-          image: public.ecr.aws/boostsecurityio/boost-scanner-trivy-sbom:68831d5@sha256:2b7878a72c2d7e1720ef3a44ef0cdc865cd3f95dc42996c6dbb5232438e87eb8
+          image: public.ecr.aws/boostsecurityio/boost-scanner-trivy-sbom:385532b@sha256:b56ef7f688074c8b6e8c2996f6626a641973f2b7bb1ff70143474db9cc900d7f
           command: process
           # not /app: srcdir is bind-mounted at workdir and the image lives under /app
           workdir: /scan
