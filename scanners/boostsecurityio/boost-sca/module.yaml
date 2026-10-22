@@ -131,7 +131,7 @@ steps:
       format: cyclonedx
       post-processor:
         docker:
-          image: public.ecr.aws/boostsecurityio/boost-scanner-trivy-sbom:04ebc06@sha256:3a179a019b1792bc86841cd6704478ffaa537d4dea2f7c8306777f9721135291
+          image: public.ecr.aws/boostsecurityio/boost-scanner-trivy-sbom:385532b@sha256:b56ef7f688074c8b6e8c2996f6626a641973f2b7bb1ff70143474db9cc900d7f
           command: process
           # not /app: srcdir is bind-mounted at workdir and the image lives under /app
           workdir: /scan
@@ -141,7 +141,7 @@ steps:
 enrichment:
   enable_on_diff_scan: false
   docker:
-    image: public.ecr.aws/boostsecurityio/boost-scanner-trivy-sbom:04ebc06@sha256:3a179a019b1792bc86841cd6704478ffaa537d4dea2f7c8306777f9721135291
+    image: public.ecr.aws/boostsecurityio/boost-scanner-trivy-sbom:385532b@sha256:b56ef7f688074c8b6e8c2996f6626a641973f2b7bb1ff70143474db9cc900d7f
     command: reachability
     # not /app: srcdir is bind-mounted at workdir and the image lives under /app
     workdir: /scan
