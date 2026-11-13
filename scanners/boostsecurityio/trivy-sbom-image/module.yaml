@@ -12,10 +12,10 @@ config:
 setup:
   - name: download trivy
     environment:
-      VERSION: 0.69.2
-      LINUX_X86_64_SHA: 65b5755bbc851699be0286b453b51c3b1f139a8c1ce731f444210eeaf9a1aa61
-      LINUX_ARM64_SHA: 524e496954c761ce5cd9c92baf2f7c2180958015bc25edad31570e102592a37c
-      MACOS_ARM64_SHA: 28243bee903a5e00fe9074baeb9e57c51ae05514261a53da66ef7f2cc0b352f9
+      VERSION: 0.76.2
+      LINUX_X86_64_SHA: af009edb086f3beeb1ce2e091f3ee4ecdd1729bbf410d7e4eb2443bf9af2301c
+      LINUX_ARM64_SHA: 57649ada6c9a04c78a82f6ef3f51ce0bc95f6fef08708aaec4c8406e2b3b19cd
+      MACOS_ARM64_SHA: 51650866ac54e0173d65acfd4be37779a289d322dbd0c435eed85143e02ad1c8
     run: |
       BINARY_URL="https://assets.build.boostsecurity.io/scanners/trivy/trivy-${VERSION}"
       ARCH=$(uname -m)
