@@ -60,3 +60,309 @@ rules:
     pretty_name: Dependency with a Critical Vulnerability
     ref: https://nvd.nist.gov/vuln-metrics/cvss
     recommended: true
+  azure-ai-services-key:
+    categories:
+      - ALL
+      - stored-secrets
+      - cwe-top-25
+      - boost-baseline
+      - boost-hardened
+      - cwe-200
+      - cwe-798
+      - cwe-522
+      - owasp-top-10
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    name: azure-ai-services-key
+    group: stored-secrets
+    pretty_name: Exposed Secret - Azure AI Services Key
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    recommended: true
+  azure-app-config-connection-string:
+    categories:
+      - ALL
+      - stored-secrets
+      - cwe-top-25
+      - boost-baseline
+      - boost-hardened
+      - cwe-200
+      - cwe-798
+      - cwe-522
+      - owasp-top-10
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    name: azure-app-config-connection-string
+    group: stored-secrets
+    pretty_name: Exposed Secret - Azure App Configuration Connection String
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    recommended: true
+  azure-container-registry-credential:
+    categories:
+      - ALL
+      - stored-secrets
+      - cwe-top-25
+      - boost-baseline
+      - boost-hardened
+      - cwe-200
+      - cwe-798
+      - cwe-522
+      - owasp-top-10
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    name: azure-container-registry-credential
+    group: stored-secrets
+    pretty_name: Exposed Secret - Azure Container Registry Credential
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    recommended: true
+  azure-container-registry-password:
+    categories:
+      - ALL
+      - stored-secrets
+      - cwe-top-25
+      - boost-baseline
+      - boost-hardened
+      - cwe-200
+      - cwe-798
+      - cwe-522
+      - owasp-top-10
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    name: azure-container-registry-password
+    group: stored-secrets
+    pretty_name: Exposed Secret - Azure Container Registry Password
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    recommended: true
+  azure-devops-pat:
+    categories:
+      - ALL
+      - stored-secrets
+      - cwe-top-25
+      - boost-baseline
+      - boost-hardened
+      - cwe-200
+      - cwe-798
+      - cwe-522
+      - owasp-top-10
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    name: azure-devops-pat
+    group: stored-secrets
+    pretty_name: Exposed Secret - Azure DevOps Personal Access Token
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    recommended: true
+  azure-entra-client-secret:
+    categories:
+      - ALL
+      - stored-secrets
+      - cwe-top-25
+      - boost-baseline
+      - boost-hardened
+      - cwe-200
+      - cwe-798
+      - cwe-522
+      - owasp-top-10
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    name: azure-entra-client-secret
+    group: stored-secrets
+    pretty_name: Exposed Secret - Azure Entra ID Client Secret
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    recommended: true
+  azure-sas-token:
+    categories:
+      - ALL
+      - stored-secrets
+      - cwe-top-25
+      - boost-baseline
+      - boost-hardened
+      - cwe-200
+      - cwe-798
+      - cwe-522
+      - owasp-top-10
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    name: azure-sas-token
+    group: stored-secrets
+    pretty_name: Exposed Secret - Azure Shared Access Signature Token
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    recommended: true
+  azure-storage-account-key:
+    categories:
+      - ALL
+      - stored-secrets
+      - cwe-top-25
+      - boost-baseline
+      - boost-hardened
+      - cwe-200
+      - cwe-798
+      - cwe-522
+      - owasp-top-10
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    name: azure-storage-account-key
+    group: stored-secrets
+    pretty_name: Exposed Secret - Azure Storage Account Key
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    recommended: true
+  maven-settings-passphrase:
+    categories:
+      - ALL
+      - stored-secrets
+      - cwe-top-25
+      - boost-baseline
+      - boost-hardened
+      - cwe-200
+      - cwe-798
+      - cwe-522
+      - owasp-top-10
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    name: maven-settings-passphrase
+    group: stored-secrets
+    pretty_name: Exposed Secret - Maven settings.xml Passphrase
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    recommended: true
+  maven-settings-password:
+    categories:
+      - ALL
+      - stored-secrets
+      - cwe-top-25
+      - boost-baseline
+      - boost-hardened
+      - cwe-200
+      - cwe-798
+      - cwe-522
+      - owasp-top-10
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    name: maven-settings-password
+    group: stored-secrets
+    pretty_name: Exposed Secret - Maven settings.xml Password
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    recommended: true
+  maven-settings-security-master:
+    categories:
+      - ALL
+      - stored-secrets
+      - cwe-top-25
+      - boost-baseline
+      - boost-hardened
+      - cwe-200
+      - cwe-798
+      - cwe-522
+      - owasp-top-10
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    name: maven-settings-security-master
+    group: stored-secrets
+    pretty_name: Exposed Secret - Maven settings-security.xml Master Password
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    recommended: true
+  openai-admin-api-key:
+    categories:
+      - ALL
+      - stored-secrets
+      - cwe-top-25
+      - boost-baseline
+      - boost-hardened
+      - cwe-200
+      - cwe-798
+      - cwe-522
+      - owasp-top-10
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    name: openai-admin-api-key
+    group: stored-secrets
+    pretty_name: Exposed Secret - OpenAI Admin API Key
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    recommended: true
+  openai-legacy-api-key:
+    categories:
+      - ALL
+      - stored-secrets
+      - cwe-top-25
+      - boost-baseline
+      - boost-hardened
+      - cwe-200
+      - cwe-798
+      - cwe-522
+      - owasp-top-10
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    name: openai-legacy-api-key
+    group: stored-secrets
+    pretty_name: Exposed Secret - OpenAI Legacy User API Key
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    recommended: true
+  openai-project-api-key:
+    categories:
+      - ALL
+      - stored-secrets
+      - cwe-top-25
+      - boost-baseline
+      - boost-hardened
+      - cwe-200
+      - cwe-798
+      - cwe-522
+      - owasp-top-10
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    name: openai-project-api-key
+    group: stored-secrets
+    pretty_name: Exposed Secret - OpenAI Project API Key
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    recommended: true
+  openai-realtime-client-secret:
+    categories:
+      - ALL
+      - stored-secrets
+      - cwe-top-25
+      - boost-baseline
+      - boost-hardened
+      - cwe-200
+      - cwe-798
+      - cwe-522
+      - owasp-top-10
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    name: openai-realtime-client-secret
+    group: stored-secrets
+    pretty_name: Exposed Secret - OpenAI Realtime Client Secret
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    recommended: true
+  openai-service-account-key:
+    categories:
+      - ALL
+      - stored-secrets
+      - cwe-top-25
+      - boost-baseline
+      - boost-hardened
+      - cwe-200
+      - cwe-798
+      - cwe-522
+      - owasp-top-10
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    name: openai-service-account-key
+    group: stored-secrets
+    pretty_name: Exposed Secret - OpenAI Service Account Key
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    recommended: true
+  openai-service-api-key:
+    categories:
+      - ALL
+      - stored-secrets
+      - cwe-top-25
+      - boost-baseline
+      - boost-hardened
+      - cwe-200
+      - cwe-798
+      - cwe-522
+      - owasp-top-10
+    description: The repository exposes sensitive information to an actor that is
+      not explicitly authorized to have access to that information.
+    name: openai-service-api-key
+    group: stored-secrets
+    pretty_name: Exposed Secret - OpenAI Service API Key
+    ref: https://cwe.mitre.org/data/definitions/200.html
+    recommended: true
